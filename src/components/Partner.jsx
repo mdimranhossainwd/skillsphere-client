@@ -7,7 +7,7 @@ const Partner = () => {
             Our Valued Partners
           </h2>
         </div>
-        <div className="flex mt-12 mb-4 justify-center items-center gap-14">
+        <div className="grid grid-cols-3 md:grid-cols-4 lg:grid-cols-8 mt-12 mb-4 justify-center items-center gap-14">
           <img
             className="w-24 h-14 "
             src="https://s.udemycdn.com/partner-logos/ou-v1/volkswagen.svg"

@@ -1,0 +1,66 @@
+[
+  {
+    "_id": "01",
+    "course_Name": "The Complete Python Developer",
+    "course_Thumbnail": "https://i.ibb.co/6J9j9kp/1471348-791a-2.jpg",
+    "course_Instructor": "Jane Doe",
+    "course_TotalStudents": 1200,
+    "course_Amount": 49.99
+  },
+  {
+    "_id": "02",
+    "course_Name": "Build Web Apps with Vue JS Project",
+    "course_Thumbnail": "https://i.ibb.co/yphzKJC/995016-ebf4-3.jpg",
+    "course_Instructor": "John Smith",
+    "course_TotalStudents": 850,
+    "course_Amount": 39.99
+  },
+  {
+    "_id": "03",
+    "course_Name": "NodeJS Tutorial and Projects Course",
+    "course_Thumbnail": "https://i.ibb.co/d4wfqYx/461160-8d87-6.jpg",
+    "course_Instructor": "Dr. Alice Johnson",
+    "course_TotalStudents": 2300,
+    "course_Amount": 59.99
+  },
+  {
+    "_id": "04",
+    "course_Name": "Learn Advance Modern C++ & Algarithom",
+    "course_Thumbnail": "https://i.ibb.co/7CzzRfv/4979226-3059-2.jpg",
+    "course_Instructor": "Mark Thompson",
+    "course_TotalStudents": 1400,
+    "course_Amount": 29.99
+  },
+  {
+    "_id": "05",
+    "course_Name": "Advanced To Learn Ruby Programming",
+    "course_Thumbnail": "https://i.ibb.co/T2wT3w0/1857300-45f5-7.jpg",
+    "course_Instructor": "Emily Davis",
+    "course_TotalStudents": 920,
+    "course_Amount": 34.99
+  },
+  {
+    "_id": "06",
+    "course_Name": "Completing To Mastering Linux",
+    "course_Thumbnail": "https://i.ibb.co/G3c6t5z/5922300-af01-4.jpg",
+    "course_Instructor": "Michael Brown",
+    "course_TotalStudents": 500,
+    "course_Amount": 24.99
+  },
+  {
+    "_id": "07",
+    "course_Name": "Modern JavaScript From The Beginning 2.0 (2024)",
+    "course_Thumbnail": "https://i.ibb.co/Xs3tC0M/2201164-831a.jpg",
+    "course_Instructor": "Sarah Wilson",
+    "course_TotalStudents": 600,
+    "course_Amount": 69.99
+  },
+  {
+    "_id": "08",
+    "course_Name": "The Complete Cyber Security Course : Hackers Exposed!",
+    "course_Thumbnail": "https://i.ibb.co/VgVGzns/614772-233b-9.jpg",
+    "course_Instructor": "David Lee",
+    "course_TotalStudents": 1500,
+    "course_Amount": 44.99
+  }
+]
