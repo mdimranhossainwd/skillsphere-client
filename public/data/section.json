@@ -5,7 +5,11 @@
     "course_Thumbnail": "https://i.ibb.co/6J9j9kp/1471348-791a-2.jpg",
     "course_Instructor": "Jane Doe",
     "course_TotalStudents": 1200,
-    "course_Amount": 49.99
+    "course_Amount": 49.99,
+    "initials": "WA",
+    "description": "I am proud to say that after a few months of taking this course...I passed my exam and am now an AWS Certified Cloud Practitioner! This content was exactly what the CCP exam covered.",
+    "img": "https://example.com/images/user1.jpg",
+    "name": "Will A"
   },
   {
     "_id": "02",
@@ -13,7 +17,11 @@
     "course_Thumbnail": "https://i.ibb.co/yphzKJC/995016-ebf4-3.jpg",
     "course_Instructor": "John Smith",
     "course_TotalStudents": 850,
-    "course_Amount": 39.99
+    "course_Amount": 39.99,
+    "initials": "WB",
+    "description": "This course is fantastic for beginners. It covers all the basics and advanced topics, making you proficient in no time. Highly recommended for anyone starting out in data science.",
+    "img": "https://example.com/images/user1.jpg",
+    "name": "Will B"
   },
   {
     "_id": "03",
@@ -21,7 +29,11 @@
     "course_Thumbnail": "https://i.ibb.co/d4wfqYx/461160-8d87-6.jpg",
     "course_Instructor": "Dr. Alice Johnson",
     "course_TotalStudents": 2300,
-    "course_Amount": 59.99
+    "course_Amount": 59.99,
+    "initials": "WC",
+    "description": "One of the best courses on management and leadership I have come across so far. The advice is practical, and examples highly relatable. Would help anyone become a better manager.",
+    "img": "https://example.com/images/user1.jpg",
+    "name": "Will C"
   },
   {
     "_id": "04",
@@ -29,7 +41,12 @@
     "course_Thumbnail": "https://i.ibb.co/7CzzRfv/4979226-3059-2.jpg",
     "course_Instructor": "Mark Thompson",
     "course_TotalStudents": 1400,
-    "course_Amount": 29.99
+    "course_Amount": 29.99,
+    "initials": "WD",
+
+    "description": "I highly recommend this course for all budding data scientists. Even people with no prior knowledge of any visualization tools can become a master after completing this course.",
+    "img": "https://example.com/images/user1.jpg",
+    "name": "Will D"
   },
   {
     "_id": "05",
@@ -37,7 +54,11 @@
     "course_Thumbnail": "https://i.ibb.co/T2wT3w0/1857300-45f5-7.jpg",
     "course_Instructor": "Emily Davis",
     "course_TotalStudents": 920,
-    "course_Amount": 34.99
+    "course_Amount": 34.99,
+    "initials": "WE",
+    "description": "Great introduction to web development. The lessons are well-structured and easy to follow. By the end, you'll have built several projects. Perfect for anyone wanting to start a career in tech.",
+    "img": "https://example.com/images/user1.jpg",
+    "name": "Will E"
   },
   {
     "_id": "06",
@@ -45,7 +66,12 @@
     "course_Thumbnail": "https://i.ibb.co/G3c6t5z/5922300-af01-4.jpg",
     "course_Instructor": "Michael Brown",
     "course_TotalStudents": 500,
-    "course_Amount": 24.99
+    "course_Amount": 24.99,
+    "initials": "WF",
+
+    "description": "I highly recommend this course for all budding data scientists. Even people with no prior knowledge of any visualization tools can become a master after completing this course.",
+    "img": "https://example.com/images/user1.jpg",
+    "name": "Will F"
   },
   {
     "_id": "07",
@@ -53,7 +79,12 @@
     "course_Thumbnail": "https://i.ibb.co/Xs3tC0M/2201164-831a.jpg",
     "course_Instructor": "Sarah Wilson",
     "course_TotalStudents": 600,
-    "course_Amount": 69.99
+    "course_Amount": 69.99,
+    "initials": "WG",
+
+    "description": "I am proud to say that after a few months of taking this course...I passed my exam and am now an AWS Certified Cloud Practitioner! This content was exactly what the CCP exam covered.",
+    "img": "https://example.com/images/user1.jpg",
+    "name": "Will G"
   },
   {
     "_id": "08",
@@ -61,6 +92,10 @@
     "course_Thumbnail": "https://i.ibb.co/VgVGzns/614772-233b-9.jpg",
     "course_Instructor": "David Lee",
     "course_TotalStudents": 1500,
-    "course_Amount": 44.99
+    "course_Amount": 44.99,
+    "description": "One of the best courses on management and leadership I have come across so far. The advice is practical, and examples highly relatable. Would help anyone become a better manager.",
+    "img": "https://example.com/images/user1.jpg",
+    "name": "Will H",
+    "initials": "WH"
   }
 ]
