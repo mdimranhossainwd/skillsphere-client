@@ -1,6 +1,28 @@
-import { Link } from "react-router-dom";
+import toast from "react-hot-toast";
+import { Link, useNavigate } from "react-router-dom";
+import useAuth from "../../hooks/useAuth";
 
 const SignIn = () => {
+  const { login, handleGoogle } = useAuth();
+  const navigate = useNavigate();
+  const handleLogin = (e) => {
+    e.preventDefault();
+    const form = e.target;
+    const email = form.email.value;
+    const password = form.password.value;
+    login(email, password).then((result) => {
+      const user = result.user;
+      toast.success("Welcome back! You have successfully logged in.");
+      navigate("/");
+      console.log(`User's Login`, user);
+    });
+  };
+
+  const handleToGoogle = () => {
+    handleGoogle();
+    toast.success("Google login successful. Enjoy your time with us!");
+  };
+
   return (
     <div className="flex items-center justify-center h-screen">
       <div className="container mx-auto">
@@ -8,7 +30,7 @@ const SignIn = () => {
           Log in to your Edu-Synnc Account
         </h2>
         <div>
-          <form className="max-w-sm mx-auto">
+          <form onSubmit={handleLogin} className="max-w-sm mx-auto">
             <div className="">
               <label
                 htmlFor="email"
@@ -19,7 +41,8 @@ const SignIn = () => {
               <input
                 type="email"
                 id="email"
-                className="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-md block w-full py-2.5 px-4 dark:placeholder-gray-400 dark:text-white"
+                name="email"
+                className="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-md block w-full py-2.5 px-4 dark:placeholder-gray-400 dark:text-black"
                 placeholder="Your email here ...."
                 required
               />
@@ -34,7 +57,8 @@ const SignIn = () => {
               <input
                 type="password"
                 id="password"
-                className="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-md block w-full py-2.5 px-4 dark:placeholder-gray-400 dark:text-white"
+                name="password"
+                className="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-md block w-full py-2.5 px-4 dark:placeholder-gray-400 dark:text-black"
                 required
                 placeholder="Type Password..."
               />
@@ -46,7 +70,10 @@ const SignIn = () => {
             >
               Log In
             </button>
-            <button className="flex gap-4 items-center border w-full py-2.5 px-4 justify-center my-3">
+            <button
+              onClick={handleToGoogle}
+              className="flex gap-4 items-center border w-full py-2.5 px-4 justify-center my-3"
+            >
               <img
                 className="w-8"
                 src="https://www.freepnglogos.com/uploads/google-logo-png/google-logo-icon-png-transparent-background-osteopathy-16.png"

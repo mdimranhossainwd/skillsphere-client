@@ -1,6 +1,34 @@
-import { Link } from "react-router-dom";
+import toast from "react-hot-toast";
+import { Link, useNavigate } from "react-router-dom";
+import useAuth from "../../hooks/useAuth";
 
 const SignUp = () => {
+  const { createUser } = useAuth();
+  const navigate = useNavigate();
+  const handleLogin = (e) => {
+    e.preventDefault();
+    const form = e.target;
+    const name = form.name.value;
+    const email = form.email.value;
+    const password = form.password.value;
+    const formAllData = { name, email, password };
+    console.log(formAllData);
+
+    createUser(email, password)
+      .then((result) => {
+        const user = result.user;
+        const userInfo = {
+          name: name,
+          email: user?.email,
+        };
+        console.log("Current User", user);
+        navigate("/");
+        toast.success("Your account is now active. Enjoy our services!");
+      })
+
+      .catch((error) => console.log(error));
+  };
+
   return (
     <div className="flex items-center justify-center h-screen">
       <div className="container mx-auto">
@@ -8,7 +36,7 @@ const SignUp = () => {
           Sign up and start learning
         </h2>
         <div>
-          <form className="max-w-sm mx-auto">
+          <form onSubmit={handleLogin} className="max-w-sm mx-auto">
             <div className="">
               <label
                 htmlFor="repeat-password"
@@ -17,9 +45,10 @@ const SignUp = () => {
                 Your Name
               </label>
               <input
-                type="password"
+                type="name"
+                name="name"
                 id="name"
-                className="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-md block w-full py-2.5 px-4 dark:placeholder-gray-400 dark:text-white"
+                className="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-md block w-full py-2.5 px-4 dark:placeholder-gray-400 dark:text-black"
                 required
                 placeholder="Full Name ...."
               />
@@ -33,8 +62,9 @@ const SignUp = () => {
               </label>
               <input
                 type="email"
+                name="email"
                 id="email"
-                className="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-md block w-full py-2.5 px-4 dark:placeholder-gray-400 dark:text-white"
+                className="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-md block w-full py-2.5 px-4 dark:placeholder-gray-400 dark:text-black"
                 placeholder="Your email here ...."
                 required
               />
@@ -49,7 +79,8 @@ const SignUp = () => {
               <input
                 type="password"
                 id="password"
-                className="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-md block w-full py-2.5 px-4 dark:placeholder-gray-400 dark:text-white"
+                name="password"
+                className="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-md block w-full py-2.5 px-4 dark:placeholder-gray-400 dark:text-black"
                 required
                 placeholder="Type Password..."
               />
