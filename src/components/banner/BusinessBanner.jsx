@@ -1,7 +1,7 @@
 const BusinessBanner = () => {
   return (
     <div className="container mx-auto px-16 my-16">
-      <div className="flex items-center justify-between">
+      <div className="lg:flex items-center justify-between">
         <div>
           <h3 className="text-2xl mb-4">
             {" "}
@@ -9,7 +9,7 @@ const BusinessBanner = () => {
             <span className="text-[#34B4F4]">business</span>
           </h3>
           <div>
-            <h2 className="text-4xl font-medium mb-5">
+            <h2 className="text-3xl lg:text-4xl font-medium mb-5">
               Upskill your team with <br /> Udemy Business
             </h2>
             <ol className="text-lg font-medium space-y-2" type="number">
@@ -34,7 +34,7 @@ const BusinessBanner = () => {
         </div>
 
         <img
-          className="w-2/5"
+          className="lg:w-2/5 mt-10 lg:mt-0"
           src="https://s.udemycdn.com/home/non-student-cta/UB_Promo_800x800.jpg"
           alt=""
         />

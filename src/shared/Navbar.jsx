@@ -13,7 +13,7 @@ const Navbar = () => {
   return (
     <div>
       <nav className=" ">
-        <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto px-4 py-2">
+        <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto px-4 py-1">
           <a className="flex items-center space-x-3 rtl:space-x-reverse">
             <img
               src="https://i.ibb.co/NVf6pJd/Partner-logos-for-homepage-6-removebg-preview.png"
@@ -26,7 +26,7 @@ const Navbar = () => {
             className="items-center justify-between hidden w-full md:flex md:w-auto md:order-1"
             id="navbar-cta"
           >
-            <ul className="flex flex-col text-lg font-semibold p-4 md:p-0 mt-4 border  rounded-lg md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 ">
+            <ul className="flex flex-col text-md font-bold p-4 md:p-0 mt-4 border  rounded-lg md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 ">
               {navItem}
             </ul>
           </div>

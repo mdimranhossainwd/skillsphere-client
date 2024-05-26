@@ -1,4 +1,5 @@
 import Coursebg from "../components/Course/Coursebg";
+import RecommandCourse from "../components/Course/RecommandCourse";
 import Partner from "../components/Partner";
 import Banner from "../components/banner/Banner";
 import BusinessBanner from "../components/banner/BusinessBanner";
@@ -16,6 +17,7 @@ const MainLayout = () => {
       <Coursebg />
       <Reviews />
       <BusinessBanner />
+      <RecommandCourse />
       <Teacher />
       <Footer />
     </div>
