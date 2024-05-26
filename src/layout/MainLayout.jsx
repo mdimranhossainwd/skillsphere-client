@@ -2,6 +2,7 @@ import Coursebg from "../components/Course/Coursebg";
 import Partner from "../components/Partner";
 import Banner from "../components/banner/Banner";
 import Reviews from "../components/review/Reviews";
+import Teacher from "../components/teacher/Teacher";
 import Footer from "../shared/Footer";
 import Navbar from "../shared/Navbar";
 
@@ -13,6 +14,7 @@ const MainLayout = () => {
       <Partner />
       <Coursebg />
       <Reviews />
+      <Teacher />
       <Footer />
     </div>
   );

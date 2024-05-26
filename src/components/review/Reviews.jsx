@@ -30,15 +30,15 @@ const Reviews = () => {
   };
 
   return (
-    <div className=" bg-[#F7F9FA] py-12">
+    <div className=" bg-[#F7F9FA] py-12 mt-12">
       <div className="container mx-auto">
-        <h4 className="text-xl font-bold">
+        <h4 className="text-xl text-center md:text-left font-bold">
           How learners like you are achieving their goals
         </h4>
 
         <Carousel responsive={responsive}>
           {card.map((item) => (
-            <div key={item._id} className="flex-grow px-4 my-10 bg-white">
+            <div key={item._id} className="flex-grow mx-2 my-10 bg-white">
               <div className="border px-4 py-6 flex flex-col h-full">
                 <svg
                   className="w-4 h-4 text-gray-400 dark:text-gray-600 mb-4"
