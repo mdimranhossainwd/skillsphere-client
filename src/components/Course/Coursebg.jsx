@@ -41,7 +41,13 @@ const Coursebg = () => {
           published every month
         </p>
       </div>
-      <Carousel responsive={responsive}>
+      <Carousel
+        responsive={responsive}
+        autoPlay={true}
+        autoPlaySpeed={2500}
+        keyBoardControl={true}
+        infinite={true}
+      >
         {course.map((item) => (
           <div key={item._id} className="my-6">
             <img className="w-full px-2" src={item?.course_Thumbnail} alt="" />

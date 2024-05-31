@@ -1,23 +1,13 @@
-// const CourseCard = ({ details }) => {
-//   const {
-//     _id,
-//     course_Name,
-//     course_Thumbnail,
-//     course_Instructor,
-//     course_TotalStudents,
-//     course_Amount,
-//   } = details || {};
-//   return (
-//     <div>
-//       <div>
-//         <img src={course_Thumbnail} alt="" />
-//         <h2 className="text-md font-bold my-3">{course_Name}</h2>
-//         <div>
-//           <span>4.5</span>
-//         </div>
-//       </div>
-//     </div>
-//   );
-// };
+const CourseCard = () => {
+  return (
+    <div>
+      <div>
+        <h2 className="text-3xl text-balck my-12 font-bold text-center">
+          All Popular Courses
+        </h2>
+      </div>
+    </div>
+  );
+};
 
-// export default CourseCard;
+export default CourseCard;

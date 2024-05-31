@@ -4,7 +4,7 @@ const Navbar = () => {
   const navItem = (
     <>
       <Link>Home</Link>
-      <Link>All Classes</Link>
+      <NavLink to="/allclass">All Classes</NavLink>
       <Link>Tech On</Link>
       <NavLink to="/signup">Sign In</NavLink>
     </>

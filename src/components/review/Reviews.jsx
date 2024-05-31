@@ -36,7 +36,13 @@ const Reviews = () => {
           How learners like you are achieving their goals
         </h4>
 
-        <Carousel responsive={responsive}>
+        <Carousel
+          responsive={responsive}
+          autoPlay={true}
+          autoPlaySpeed={2500}
+          keyBoardControl={true}
+          infinite={true}
+        >
           {card.map((item) => (
             <div key={item._id} className="flex-grow mx-2 my-10 bg-white">
               <div className="border px-4 py-6 flex flex-col h-full">
