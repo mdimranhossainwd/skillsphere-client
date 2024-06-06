@@ -1,3 +1,4 @@
+import { Outlet } from "react-router-dom";
 import DeashboardMenu from "../components/menu/DeashboardMenu";
 
 const DashboardPage = () => {
@@ -6,8 +7,8 @@ const DashboardPage = () => {
       <div className="min-h-full">
         <DeashboardMenu />
       </div>
-      <div className="md:flex-1 bg-[#99d98c]">
-        <h3>Dashboard </h3>
+      <div className="md:flex-1 bg-[#ECF0EF]">
+        <Outlet />
       </div>
     </div>
   );

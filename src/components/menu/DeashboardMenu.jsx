@@ -4,10 +4,13 @@ const DeashboardMenu = () => {
   const dashmenu = (
     <div className=" gap-5 grid grid-cols-1 ">
       <NavLink to="/" className="flex items-center gap-4 text-lg font-semibold">
-        Home
+        My Class
       </NavLink>
-      <NavLink className="flex items-center gap-4 text-lg font-semibold">
-        Menu
+      <NavLink
+        to="profile"
+        className="flex items-center gap-4 text-lg font-semibold"
+      >
+        Profile
       </NavLink>
       <NavLink className="flex items-center gap-4 text-lg font-semibold">
         Shop
@@ -19,7 +22,7 @@ const DeashboardMenu = () => {
   );
 
   return (
-    <div className="w-64 min-h-screen bg-[#76c893] text-lg text-white">
+    <div className="w-64 min-h-screen bg-[#0a9396] text-lg text-white">
       <Link>
         <img
           className="w-40 mx-auto"
