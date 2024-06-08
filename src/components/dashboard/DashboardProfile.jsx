@@ -1,17 +1,40 @@
 import "react-date-range/dist/styles.css"; // main style file
 import "react-date-range/dist/theme/default.css";
 import useAuth from "../../hooks/useAuth";
-import Profile from "../../shared/Profile";
+import CustomLineChart from "./chart/CustomLineChart";
+
 const DashboardProfile = () => {
   const { user } = useAuth();
 
   return (
-    <div className="">
-      <Profile
+    <div className=" my-14">
+      <div
+        className="object-cover p-6 h-44 w-full flex items-center"
+        style={{
+          backgroundImage:
+            "url(https://i.ibb.co/WpdZdTv/cee37a21-1aac-4efe-973e-c8ff72ef079b.jpg)",
+        }}
+      >
+        <div className=""></div>
+        <div className="">
+          <div className="max-w-md">
+            <h3 className="text-2xl mb-6 italic font-bold">
+              Welcome back,{" "}
+              <span className="bg-gradient-to-r from-[#76c893] to-blue-500 text-transparent bg-clip-text">
+                {user?.displayName}
+              </span>
+            </h3>
+          </div>
+        </div>
+      </div>
+
+      <CustomLineChart />
+
+      {/* <Profile
         heading={user?.displayName}
         img={user?.photoURL}
         email={user?.email}
-      />
+      /> */}
       {/* <Calendar date={new Date()} /> */}
     </div>
   );
