@@ -1,7 +1,7 @@
 import "react-date-range/dist/styles.css"; // main style file
 import "react-date-range/dist/theme/default.css";
 import useAuth from "../../hooks/useAuth";
-import CustomLineChart from "./chart/CustomLineChart";
+import UserProfile from "./profile/UserProfile";
 
 const DashboardProfile = () => {
   const { user } = useAuth();
@@ -28,7 +28,24 @@ const DashboardProfile = () => {
         </div>
       </div>
 
-      <CustomLineChart />
+      <UserProfile />
+
+      {/* <div
+        style={{
+          display: "flex",
+          justifyContent: "space-between",
+          // padding: "20px",
+          color: "#fff",
+          marginTop: "25px",
+          marginBottom: "25px",
+        }}
+        className="gap-6"
+      >
+        <ModuleFinishTrack />
+        <VideoDuration />
+      </div>
+
+      <CustomLineChart /> */}
 
       {/* <Profile
         heading={user?.displayName}
