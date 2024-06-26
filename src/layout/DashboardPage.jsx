@@ -7,6 +7,7 @@ const DashboardPage = () => {
       <div className="min-h-full">
         <DeashboardMenu />
       </div>
+
       <div className="md:flex-1 px-8 bg-[#ECF0EF]">
         <Outlet />
       </div>
