@@ -7,7 +7,10 @@ import { NavLink } from "react-router-dom";
 const DeashboardMenu = () => {
   const dashmenu = (
     <div className=" gap-5 grid grid-cols-1 pt-5 ">
-      <NavLink to="/" className="flex items-center gap-4 text-lg font-semibold">
+      <NavLink
+        to="myclass"
+        className="flex items-center gap-4 text-lg font-semibold"
+      >
         <GiClassicalKnowledge /> My Class
       </NavLink>
       <NavLink

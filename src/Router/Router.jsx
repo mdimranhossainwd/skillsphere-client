@@ -1,5 +1,6 @@
 import { createBrowserRouter } from "react-router-dom";
 import DashboardProfile from "../components/dashboard/DashboardProfile";
+import MyClassPage from "../components/dashboard/pages/MyClassPage";
 import SignIn from "../components/form/SignIn";
 import SignUp from "../components/form/SignUp";
 import MainContentSections from "../components/menu/MainContentSections";
@@ -30,6 +31,10 @@ export const router = createBrowserRouter([
       {
         path: "/dashboard",
         element: <MainContentSections />,
+      },
+      {
+        path: "myclass",
+        element: <MyClassPage />,
       },
       {
         path: "profile",
