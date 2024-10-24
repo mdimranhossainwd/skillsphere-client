@@ -1,4 +1,4 @@
-import { Link, NavLink } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import useAuth from "../hooks/useAuth";
 
 const Navbar = () => {
@@ -83,16 +83,10 @@ const Navbar = () => {
               {navItem}
             </ul>
           </div>
-          <Link hrefLang="index.html">
-            <img
-              className="w-36"
-              src="https://i.ibb.co/NVf6pJd/Partner-logos-for-homepage-6-removebg-preview.png"
-              alt=""
-            />
-          </Link>
+          <h3 className="text-xl text-[#5C53FE] font-bold">SkillSphere</h3>
         </div>
         <div className="navbar-end hidden lg:flex">
-          <ul className="menu menu-horizontal px-1 items-center text-black text-[16px] gap-5 font-bold">
+          <ul className="menu menu-horizontal px-1 items-center text-black text-[16px] gap-5 font-medium">
             {navItem}
           </ul>
         </div>
