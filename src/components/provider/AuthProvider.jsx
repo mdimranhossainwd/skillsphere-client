@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import {
   GoogleAuthProvider,
   createUserWithEmailAndPassword,
@@ -9,72 +10,69 @@ import {
   updateProfile,
 } from "firebase/auth";
 import { createContext, useEffect, useState } from "react";
-import app from "../../config/firebase.config";
-export const AuthContext = createContext();
-
+import { app } from "../../config/firebase.config";
+export const AuthContext = createContext(null);
 const auth = getAuth(app);
-const provider = new GoogleAuthProvider();
+const googleProvider = new GoogleAuthProvider();
 
 const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);
-  const [isloading, setIsLoading] = useState(true);
+  const [loading, setLoading] = useState(true);
 
-  //   SIGNUP USER
   const createUser = (email, password) => {
-    setIsLoading(true);
+    setLoading(true);
     return createUserWithEmailAndPassword(auth, email, password);
   };
 
-  //   LOGIN USER
-  const login = (email, password) => {
-    setIsLoading(true);
+  const signIn = (email, password) => {
+    setLoading(true);
     return signInWithEmailAndPassword(auth, email, password);
   };
 
-  //   LOGOUT USER
-  const logOut = () => {
-    setIsLoading(true);
+  const signInWithGoogle = () => {
+    setLoading(true);
+    return signInWithPopup(auth, googleProvider);
+  };
+
+  const logOut = async () => {
+    setLoading(true);
     return signOut(auth);
   };
 
-  // GOOGLE SIGNUP/SIGNIN
-
-  const handleGoogle = () => {
-    setIsLoading(true);
-    return signInWithPopup(auth, provider);
+  const updateUserProfile = (name, photo) => {
+    return updateProfile(auth.currentUser, {
+      displayName: name,
+      photoURL: photo,
+    });
   };
 
+  // onAuthStateChange
   useEffect(() => {
-    const unSubscribe = onAuthStateChanged(auth, (currentUser) => {
+    const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
       setUser(currentUser);
-      setIsLoading(false);
+      console.log("CurrentUser-->", currentUser);
+      setLoading(false);
     });
-
     return () => {
-      return unSubscribe();
+      return unsubscribe();
     };
   }, []);
 
-  //   UPDATE PROFILE
-  const handleUpdate = (name) => {
-    return updateProfile(auth.currentUser, {
-      displayName: name,
-      photoURL: "https://example.com/jane-q-user/profile.jpg",
-    });
-  };
-
-  //   ALL FIREBASE VALUE HERE
-  const values = {
-    createUser,
-    login,
-    logOut,
-    handleUpdate,
+  const authInfo = {
     user,
-    isloading,
-    handleGoogle,
+    setUser,
+    loading,
+    setLoading,
+    createUser,
+    signIn,
+    signInWithGoogle,
+    logOut,
+    updateUserProfile,
   };
 
-  return <AuthContext.Provider value={values}>{children}</AuthContext.Provider>;
+  return (
+    <AuthContext.Provider value={authInfo}>{children}</AuthContext.Provider>
+  );
 };
 
 export default AuthProvider;

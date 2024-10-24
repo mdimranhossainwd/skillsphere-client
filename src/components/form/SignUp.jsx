@@ -1,32 +1,44 @@
 import toast from "react-hot-toast";
 import { Link, useNavigate } from "react-router-dom";
 import useAuth from "../../hooks/useAuth";
+import useAxios from "../../hooks/useAxios";
 
 const SignUp = () => {
-  const { createUser } = useAuth();
+  const { signInWithGoogle, createUser, updateUserProfile, user, setUser } =
+    useAuth();
+  const axios = useAxios();
   const navigate = useNavigate();
-  const handleLogin = (e) => {
+  const from = location.state || "/";
+  const handleLogin = async (e) => {
     e.preventDefault();
     const form = e.target;
     const name = form.name.value;
     const email = form.email.value;
+    const photo = form.photo.value;
     const password = form.password.value;
-    const formAllData = { name, email, password };
+    const formAllData = { name, email, password, photo };
     console.log(formAllData);
 
-    createUser(email, password)
-      .then((result) => {
-        const user = result.user;
-        const userInfo = {
-          name: name,
-          email: user?.email,
-        };
-        console.log("Current User", user);
-        navigate("/");
-        toast.success("Your account is now active. Enjoy our services!");
-      })
+    try {
+      //2. User Registration
+      const result = await createUser(email, password);
 
-      .catch((error) => console.log(error));
+      await updateUserProfile(name, photo);
+      // Optimistic UI Update
+      setUser({ ...result?.user, photoURL: photo, displayName: name });
+      const { data } = await axios.post("/users", {
+        name,
+        email,
+        photo,
+      });
+      console.log(data);
+
+      navigate(from, { replace: true });
+      toast.success("Your account is now active. Enjoy our services!");
+    } catch (err) {
+      console.log(err);
+      toast.error(err?.message);
+    }
   };
 
   return (
@@ -67,6 +79,22 @@ const SignUp = () => {
                 className="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-md block w-full py-2.5 px-4 dark:placeholder-gray-400 dark:text-black"
                 placeholder="Your email here ...."
                 required
+              />
+            </div>
+            <div className="">
+              <label
+                htmlFor="repeat-password"
+                className="block text-sm font-medium text-gray-900 dark:text-white"
+              >
+                Photo URL
+              </label>
+              <input
+                type="img"
+                name="photo"
+                id="photo"
+                className="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-md block w-full py-2.5 px-4 dark:placeholder-gray-400 dark:text-black"
+                required
+                placeholder="Photo URL Here ...."
               />
             </div>
             <div className="">
