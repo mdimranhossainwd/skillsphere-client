@@ -13,19 +13,19 @@ const Navbar = () => {
   const navItem = (
     <>
       <NavLink
-        className={({ isActive }) => (isActive ? "text-[#F42643]" : "")}
+        className={({ isActive }) => (isActive ? "text-[#5C53FE]" : "")}
         to="/"
       >
         Home
       </NavLink>
       <NavLink
-        className={({ isActive }) => (isActive ? "text-[#F42643]" : "")}
+        className={({ isActive }) => (isActive ? "text-[#5C53FE]" : "")}
         to="/allclass"
       >
         All Class
       </NavLink>
       <NavLink
-        className={({ isActive }) => (isActive ? "text-[#F42643]" : "")}
+        className={({ isActive }) => (isActive ? "text-[#5C53FE]" : "")}
         to="/shop"
       >
         My Class
@@ -34,7 +34,7 @@ const Navbar = () => {
       {user?.email ? (
         <>
           <NavLink
-            className={({ isActive }) => (isActive ? "text-[#F42643]" : "")}
+            className={({ isActive }) => (isActive ? "text-[#5C53FE]" : "")}
             to="/dashboard"
           >
             Dashboard
@@ -42,7 +42,7 @@ const Navbar = () => {
         </>
       ) : (
         <NavLink
-          className={({ isActive }) => (isActive ? "text-[#F42643]" : "")}
+          className={({ isActive }) => (isActive ? "text-[#5C53FE]" : "")}
           to="/signin"
         >
           Login

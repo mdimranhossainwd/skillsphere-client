@@ -1,10 +1,13 @@
 import toast from "react-hot-toast";
 import { Link, useNavigate } from "react-router-dom";
 import useAuth from "../../hooks/useAuth";
+import useAxios from "../../hooks/useAxios";
 
 const SignIn = () => {
-  const { login, handleGoogle } = useAuth();
+  const { login, signInWithGoogle } = useAuth();
+  const axios = useAxios();
   const navigate = useNavigate();
+
   const handleLogin = (e) => {
     e.preventDefault();
     const form = e.target;
@@ -18,9 +21,21 @@ const SignIn = () => {
     });
   };
 
-  const handleToGoogle = () => {
-    handleGoogle();
-    toast.success("Google login successful. Enjoy your time with us!");
+  const handleToGoogle = async () => {
+    try {
+      const result = await signInWithGoogle();
+      console.log(result.user);
+      const { data } = await axios.post("/users", {
+        email: result?.user?.email,
+        name: result?.user?.displayName,
+        photo: result?.user?.photoURL,
+      });
+      console.log(data);
+      navigate("/");
+      toast.success("Google login successful. Enjoy your time with us!");
+    } catch (err) {
+      console.log(err);
+    }
   };
 
   return (
