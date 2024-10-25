@@ -1,0 +1,262 @@
+[
+  {
+    "title": "The Complete Python Developer",
+    "description": "Learn Python from the ground up and become a proficient developer. This course covers Python fundamentals, data structures, web development, and automation. By the end, you'll be able to create complex applications, work with frameworks like Django and Flask, and automate tasks using Python.",
+    "instructor": "Emily Brown",
+    "price": 59.99,
+    "rating": 4.7,
+    "total_reviews": 8500,
+    "category": "Programming Languages",
+    "image_url": "https://i.ibb.co/6J9j9kp/1471348-791a-2.jpg",
+    "language": "English",
+    "course_level": "All Levels",
+    "duration": "45 hours",
+    "enrolled_students": 12000,
+    "curriculum": [
+      {
+        "section_title": "Python Basics",
+        "lectures": [
+          {
+            "lecture_title": "Introduction to Python",
+            "duration": "15 minutes"
+          }
+        ]
+      }
+    ],
+    "requirements": ["No prior programming experience required."],
+    "what_you_will_learn": [
+      "Understand Python programming fundamentals.",
+      "Develop web applications using Django and Flask."
+    ],
+    "detailed_description": "This comprehensive Python course covers everything you need to know to become a proficient developer, including web development and automation."
+  },
+  {
+    "title": "Build Web Apps with Vue JS Project",
+    "description": "This course is designed to help you learn Vue.js from scratch, with a focus on building real-world web applications. You'll explore Vue's core concepts, including reactive data, components, directives, and Vue Router. By the end, you'll have the skills to create dynamic, modern web apps with ease.",
+    "instructor": "Sarah Green",
+    "price": 79.99,
+    "rating": 4.8,
+    "total_reviews": 5200,
+    "category": "Web Development",
+    "image_url": "https://i.ibb.co/yphzKJC/995016-ebf4-3.jpg",
+    "language": "English",
+    "course_level": "Intermediate",
+    "duration": "30 hours",
+    "enrolled_students": 6300,
+    "curriculum": [
+      {
+        "section_title": "Vue.js Basics",
+        "lectures": [
+          {
+            "lecture_title": "Introduction to Vue.js",
+            "duration": "12 minutes"
+          }
+        ]
+      }
+    ],
+    "requirements": ["Basic understanding of JavaScript is helpful."],
+    "what_you_will_learn": [
+      "Master the basics of Vue.js and its core features.",
+      "Develop dynamic and interactive web applications."
+    ],
+    "detailed_description": "The course covers Vue.js from beginner to intermediate level, providing practical exercises and projects to reinforce learning."
+  },
+  {
+    "title": "NodeJS Tutorial and Projects Course",
+    "description": "Become a Node.js expert with this hands-on course. You will learn about server-side development, building RESTful APIs, working with Express, and integrating databases like MongoDB. The course focuses on practical projects, giving you real-world experience in building scalable server-side applications.",
+    "instructor": "Mark Johnson",
+    "price": 69.99,
+    "rating": 4.6,
+    "total_reviews": 7200,
+    "category": "Web Development",
+    "image_url": "https://i.ibb.co/d4wfqYx/461160-8d87-6.jpg",
+    "language": "English",
+    "course_level": "Intermediate",
+    "duration": "35 hours",
+    "enrolled_students": 9100,
+    "curriculum": [
+      {
+        "section_title": "Node.js Basics",
+        "lectures": [
+          {
+            "lecture_title": "Getting Started with Node.js",
+            "duration": "20 minutes"
+          }
+        ]
+      }
+    ],
+    "requirements": [
+      "Basic knowledge of JavaScript.",
+      "Understanding of web development concepts is helpful."
+    ],
+    "what_you_will_learn": [
+      "Build RESTful APIs using Node.js and Express.",
+      "Integrate databases like MongoDB in web applications."
+    ],
+    "detailed_description": "This course focuses on server-side development using Node.js, covering topics such as RESTful API development, Express, and MongoDB."
+  },
+  {
+    "title": "Learn Advance Modern C++ & Algorithms",
+    "description": "Enhance your C++ programming skills by learning modern C++ techniques and algorithms. The course covers advanced topics such as memory management, data structures, template programming, and algorithm optimization. This is ideal for experienced developers looking to deepen their understanding of C++.",
+    "instructor": "David Lee",
+    "price": 89.99,
+    "rating": 4.7,
+    "total_reviews": 6100,
+    "category": "Programming Languages",
+    "image_url": "https://i.ibb.co/7CzzRfv/4979226-3059-2.jpg",
+    "language": "English",
+    "course_level": "Advanced",
+    "duration": "50 hours",
+    "enrolled_students": 5500,
+    "curriculum": [
+      {
+        "section_title": "Modern C++ Concepts",
+        "lectures": [
+          {
+            "lecture_title": "Introduction to Modern C++",
+            "duration": "30 minutes"
+          }
+        ]
+      }
+    ],
+    "requirements": [
+      "Basic understanding of C++ programming.",
+      "Familiarity with data structures and algorithms."
+    ],
+    "what_you_will_learn": [
+      "Master modern C++ features and techniques.",
+      "Optimize algorithms for better performance."
+    ],
+    "detailed_description": "The course covers advanced C++ programming concepts, focusing on modern techniques and algorithm optimization."
+  },
+  {
+    "title": "Advanced To Learn Ruby Programming",
+    "description": "This advanced Ruby course is perfect for developers looking to master Ruby programming. It covers topics such as metaprogramming, testing, web frameworks like Ruby on Rails, and database integration. You'll gain hands-on experience by building web applications and automation scripts.",
+    "instructor": "Alex Smith",
+    "price": 64.99,
+    "rating": 4.5,
+    "total_reviews": 4100,
+    "category": "Programming Languages",
+    "image_url": "https://i.ibb.co/T2wT3w0/1857300-45f5-7.jpg",
+    "language": "English",
+    "course_level": "Advanced",
+    "duration": "40 hours",
+    "enrolled_students": 4900,
+    "curriculum": [
+      {
+        "section_title": "Advanced Ruby Concepts",
+        "lectures": [
+          {
+            "lecture_title": "Introduction to Ruby Metaprogramming",
+            "duration": "25 minutes"
+          }
+        ]
+      }
+    ],
+    "requirements": [
+      "Experience with basic Ruby programming.",
+      "Understanding of object-oriented programming."
+    ],
+    "what_you_will_learn": [
+      "Master advanced Ruby programming techniques.",
+      "Build web applications using Ruby on Rails."
+    ],
+    "detailed_description": "The course focuses on advanced Ruby programming, including metaprogramming, testing, and web development with Ruby on Rails."
+  },
+  {
+    "title": "Completing To Mastering Linux",
+    "description": "This comprehensive Linux course will guide you from beginner to expert level. You’ll learn how to work with the Linux command line, manage users and permissions, perform shell scripting, and set up servers. This course is essential for anyone aiming to master Linux for system administration or development.",
+    "instructor": "Michael Adams",
+    "price": 54.99,
+    "rating": 4.8,
+    "total_reviews": 6300,
+    "category": "Operating Systems",
+    "image_url": "https://i.ibb.co/G3c6t5z/5922300-af01-4.jpg",
+    "language": "English",
+    "course_level": "All Levels",
+    "duration": "55 hours",
+    "enrolled_students": 11000,
+    "curriculum": [
+      {
+        "section_title": "Linux Basics",
+        "lectures": [
+          {
+            "lecture_title": "Introduction to Linux",
+            "duration": "18 minutes"
+          }
+        ]
+      }
+    ],
+    "requirements": ["No prior Linux experience required."],
+    "what_you_will_learn": [
+      "Understand the fundamentals of Linux.",
+      "Manage servers and perform shell scripting."
+    ],
+    "detailed_description": "This course covers the essentials of Linux, including command line usage, server management, and shell scripting."
+  },
+  {
+    "title": "Modern JavaScript From The Beginning 2.0 (2024)",
+    "description": "Start your journey into modern JavaScript with this comprehensive course. You’ll learn everything from fundamental JavaScript concepts to the latest ECMAScript features. The course includes hands-on projects and guides you through building applications using modern tools and frameworks.",
+    "instructor": "John Doe",
+    "price": 74.99,
+    "rating": 4.9,
+    "total_reviews": 7400,
+    "category": "Programming Languages",
+    "image_url": "https://i.ibb.co/Xs3tC0M/2201164-831a.jpg",
+    "language": "English",
+    "course_level": "Beginner to Intermediate",
+    "duration": "42 hours",
+    "enrolled_students": 9000,
+    "curriculum": [
+      {
+        "section_title": "JavaScript Fundamentals",
+        "lectures": [
+          {
+            "lecture_title": "Introduction to JavaScript",
+            "duration": "10 minutes"
+          }
+        ]
+      }
+    ],
+    "requirements": ["No prior programming experience required."],
+    "what_you_will_learn": [
+      "Learn JavaScript fundamentals and new features.",
+      "Build modern applications with JavaScript."
+    ],
+    "detailed_description": "The course covers modern JavaScript from basics to advanced topics, including hands-on projects for practical learning."
+  },
+  {
+    "title": "The Complete Cyber Security Course: Hackers Exposed!",
+    "description": "This course provides an in-depth look into cybersecurity, covering the techniques used by hackers and the methods to protect against attacks. Topics include network security, penetration testing, ethical hacking, and incident response. Perfect for anyone looking to start a career in cybersecurity.",
+    "instructor": "Jessica Williams",
+    "price": 99.99,
+    "rating": 4.8,
+    "total_reviews": 8200,
+    "category": "Cyber Security",
+    "image_url": "https://i.ibb.co/VgVGzns/614772-233b-9.jpg",
+    "language": "English",
+    "course_level": "Intermediate to Advanced",
+    "duration": "60 hours",
+    "enrolled_students": 9800,
+    "curriculum": [
+      {
+        "section_title": "Cyber Security Fundamentals",
+        "lectures": [
+          {
+            "lecture_title": "Introduction to Cyber Security",
+            "duration": "20 minutes"
+          }
+        ]
+      }
+    ],
+    "requirements": [
+      "Basic understanding of computer networks.",
+      "Interest in cybersecurity."
+    ],
+    "what_you_will_learn": [
+      "Protect systems from common cybersecurity threats.",
+      "Conduct penetration tests and ethical hacking activities."
+    ],
+    "detailed_description": "The course provides practical knowledge in cybersecurity, focusing on protecting systems from attacks and understanding hacker techniques."
+  }
+]

@@ -5,12 +5,12 @@ const BusinessBanner = () => {
         <div>
           <h3 className="text-2xl mb-4">
             {" "}
-            <span className="font-bold">edusync</span>{" "}
+            <span className="font-bold">Skillsphere</span>{" "}
             <span className="text-[#34B4F4]">business</span>
           </h3>
           <div>
             <h2 className="text-3xl lg:text-4xl font-medium mb-5">
-              Upskill your team with <br /> Udemy Business
+              Upskill your team with <br /> Online Business
             </h2>
             <ol className="text-lg font-medium space-y-2" type="number">
               <li>
@@ -24,7 +24,7 @@ const BusinessBanner = () => {
             </ol>
             <div className="flex gap-3 mt-6">
               <button className="bg-black py-2 px-4 text-white text-lg font-bold">
-                Get Udemy Business
+                Get Online Business
               </button>
               <button className="border py-2 px-4 border-[#000] text-black text-lg font-bold">
                 Learn more
