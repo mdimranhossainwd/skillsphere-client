@@ -86,7 +86,7 @@ const Navbar = () => {
           <h3 className="text-xl text-[#5C53FE] font-bold">SkillSphere</h3>
         </div>
         <div className="navbar-end hidden lg:flex">
-          <ul className="menu menu-horizontal px-1 items-center text-black text-[16px] gap-5 font-medium">
+          <ul className="menu menu-horizontal px-1 items-center text-black text-[16px] gap-5 font-arima font-semibold">
             {navItem}
           </ul>
         </div>

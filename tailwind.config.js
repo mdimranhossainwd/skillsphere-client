@@ -2,7 +2,12 @@
 export default {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        playwrite: ["Playwrite GB S", "cursive"],
+        arima: ["Arima", "system-ui"],
+      },
+    },
   },
   plugins: [require("daisyui")],
 };
