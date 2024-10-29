@@ -5,6 +5,7 @@ import SignIn from "../components/form/SignIn";
 import SignUp from "../components/form/SignUp";
 import MainContentSections from "../components/menu/MainContentSections";
 import AllClassPage from "../layout/AllClassPage";
+import CourseDetailsPage from "../layout/CourseDetailsPage";
 import DashboardPage from "../layout/DashboardPage";
 import HomePageLayout from "../layout/HomePageLayout";
 import MainLayout from "../layout/MainLayout";
@@ -21,6 +22,14 @@ export const router = createBrowserRouter([
       {
         path: "/allclass",
         element: <AllClassPage />,
+      },
+      {
+        path: "/course/:id",
+        element: <CourseDetailsPage />,
+        loader: ({ params }) =>
+          fetch(
+            `http://localhost:5000/skillsphere/api/v1/courses/${params.id}`
+          ),
       },
     ],
   },
