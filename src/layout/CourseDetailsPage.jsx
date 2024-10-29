@@ -1,4 +1,5 @@
 import { useLoaderData } from "react-router-dom";
+import CourseOverview from "../components/Course/CourseOverview ";
 
 const CourseDetailsPage = () => {
   const loader = useLoaderData();
@@ -23,19 +24,19 @@ const CourseDetailsPage = () => {
   } = loader || {};
 
   return (
-    <div className="bg-[#2D2F31] mb-6">
-      <div className="container mx-auto">
+    <>
+      <div className="bg-[#2D2F31] mb-6">
         <div className="container px-6 py-10 mx-auto">
-          <div className="lg:-mx-6 justify-between lg:flex lg:items-center">
-            <div className="mt-8 w-3/5 text-white list-none lg:px-6 lg:mt-0">
+          <div className="flex flex-col lg:flex-row lg:-mx-6 justify-between lg:items-center">
+            <div className="order-2 mt-8 md:w-3/5 text-white list-none lg:px-6 lg:mt-0 lg:order-1">
               <li className="font-semibold mb-6">
-                Development > {category} > Web Development{" "}
+                Development {category} Web Development{" "}
               </li>
-              <h1 className="text-2xl  font-bold text-gray-800 dark:text-white lg:text-3xl">
+              <h1 className="text-2xl font-bold text-gray-800 dark:text-white lg:text-3xl">
                 {title}
               </h1>
 
-              <p className="mt-6 text-gray-500 dark:text-gray-400 ">
+              <p className="mt-6 text-gray-500 dark:text-gray-400">
                 “ {description} ”
               </p>
 
@@ -56,10 +57,10 @@ const CourseDetailsPage = () => {
                     viewBox="0 0 24 24"
                     fill="none"
                     stroke="currentColor"
-                    stroke-width="2"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    class="lucide w-5 lucide-shield"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    className="lucide w-5 lucide-shield"
                   >
                     <path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z" />
                   </svg>
@@ -71,10 +72,10 @@ const CourseDetailsPage = () => {
                     viewBox="0 0 24 24"
                     fill="none"
                     stroke="currentColor"
-                    stroke-width="2"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    class="lucide w-5 lucide-globe"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    className="lucide w-5 lucide-globe"
                   >
                     <circle cx="12" cy="12" r="10" />
                     <path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20" />
@@ -88,10 +89,10 @@ const CourseDetailsPage = () => {
                     viewBox="0 0 24 24"
                     fill="none"
                     stroke="currentColor"
-                    stroke-width="2"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    class="lucide w-5 lucide-keyboard-music"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    className="lucide w-5 lucide-keyboard-music"
                   >
                     <rect width="20" height="16" x="2" y="4" rx="2" />
                     <path d="M6 8h4" />
@@ -107,17 +108,18 @@ const CourseDetailsPage = () => {
                 </li>
               </div>
             </div>
-            <div>
+            <div className="order-1 mb-6 lg:mb-0 lg:order-2">
               <img
-                className=" float-right w-full h-64 object-cover"
+                className="w-[350px] h-52 object-cover"
                 src={image_url}
-                alt=""
+                alt={title}
               />
             </div>
           </div>
         </div>
       </div>
-    </div>
+      <CourseOverview loader={loader} />
+    </>
   );
 };
 
