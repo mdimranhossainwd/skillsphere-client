@@ -5,7 +5,7 @@ const PrivateRouter = ({ children }) => {
   const { user, loading } = useAuth();
   const location = useLocation();
   if (loading) {
-    return <span>loading....</span>;
+    return <span className="loading loading-infinity loading-lg"></span>;
   }
   if (user) return children;
 

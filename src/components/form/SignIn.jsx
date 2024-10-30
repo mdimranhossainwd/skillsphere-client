@@ -4,7 +4,7 @@ import useAuth from "../../hooks/useAuth";
 import useAxios from "../../hooks/useAxios";
 
 const SignIn = () => {
-  const { login, signInWithGoogle } = useAuth();
+  const { signIn, signInWithGoogle } = useAuth();
   const axios = useAxios();
   const navigate = useNavigate();
 
@@ -13,7 +13,7 @@ const SignIn = () => {
     const form = e.target;
     const email = form.email.value;
     const password = form.password.value;
-    login(email, password).then((result) => {
+    signIn(email, password).then((result) => {
       const user = result.user;
       toast.success("Welcome back! You have successfully logged in.");
       navigate("/");
