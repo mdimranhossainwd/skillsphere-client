@@ -1,3 +1,5 @@
+import Faq from "../Faq";
+
 const CourseOverview = ({ loader }) => {
   const {
     _id,
@@ -137,6 +139,96 @@ const CourseOverview = ({ loader }) => {
                 Certificate of completion
               </li>
             </ul>
+          </div>
+
+          <hr />
+
+          {/* Course FAQ */}
+          <div>
+            <h2 className="text-2xl font-bold mb-4">Course content</h2>
+            <div className="flex items-center font-medium text-[13px] gap-2 list-none">
+              <li>41 Sections </li>
+              <li>23 Lectures </li>
+              <li>
+                {duration} {curriculum[0].lectures[0].duration} total length
+              </li>
+            </div>
+            <Faq />
+          </div>
+
+          {/* Course Requirements */}
+
+          <div>
+            <h2 className="text-2xl font-bold mb-4">Requirements</h2>
+            <div>
+              <li>{requirements[0]}</li>
+              <li>{requirements[1]}</li>
+            </div>
+          </div>
+          <hr />
+          {/* Descriptions */}
+          <div>
+            <h2 className="text-2xl font-bold mb-4">Descriptions</h2>
+            <div>
+              <p className="">
+                {description}{" "}
+                <span className="font-medium">{detailed_description}</span>
+              </p>
+            </div>
+          </div>
+
+          {/* Instructor */}
+          <h2 className="text-2xl font-bold mb-4">Instructors</h2>
+
+          <div className="border rounded-md py-4 px-8">
+            <h1 className="text-xl font-arima font-bold text-blue-600">
+              <a
+                href="https://academind.com"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                {instructor}
+              </a>
+            </h1>
+            <p className="text-gray-600">Online Education</p>
+
+            <div className="flex items-center mt-4 space-x-4">
+              <img
+                src="https://plus.unsplash.com/premium_photo-1681491808153-f04e9be80cca?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" // Replace with the actual image URL
+                alt="Maximilian Schwarzmüller"
+                className="w-24 h-24 object-cover rounded-full"
+              />
+              <div>
+                <p className="flex items-center text-gray-700">
+                  <span className="text-yellow-500 mr-2">⭐</span>4.6 Instructor
+                  Rating
+                </p>
+                <p className="flex items-center text-gray-700">
+                  <span className="mr-2">👥</span>747,448 Reviews
+                </p>
+                <p className="flex items-center text-gray-700">
+                  <span className="mr-2">👨‍🎓</span>3,100,597 Students
+                </p>
+                <p className="flex items-center text-gray-700">
+                  <span className="mr-2">📚</span>48 Courses
+                </p>
+              </div>
+            </div>
+
+            <p className="mt-4 text-gray-800">
+              Bundling the courses and know-how of successful instructors,
+              Academind strives to deliver high-quality online education.
+            </p>
+            <p className="mt-2 text-gray-800">
+              Online Education, Real-Life Success - that's what Academind stands
+              for. Learn topics like web development, data analysis, and more in
+              a fun and engaging way.
+            </p>
+            <p className="mt-2 text-gray-800">
+              We've taught more than 3,000,000 students on a broad variety of
+              topics. We'd love to teach you as well! :)
+            </p>
+            <p className="mt-4 text-gray-600 italic">Keep learning!</p>
           </div>
         </div>
 

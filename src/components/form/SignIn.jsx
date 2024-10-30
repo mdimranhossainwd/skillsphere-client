@@ -42,7 +42,7 @@ const SignIn = () => {
     <div className="flex items-center justify-center h-screen">
       <div className="container mx-auto">
         <h2 className="text-2xl font-semibold mb-4 text-center">
-          Log in to your Edu-Synnc Account
+          Log in to your Skill-Sphere Account
         </h2>
         <div>
           <form onSubmit={handleLogin} className="max-w-sm mx-auto">
