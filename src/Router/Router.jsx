@@ -9,6 +9,7 @@ import CourseDetailsPage from "../layout/CourseDetailsPage";
 import DashboardPage from "../layout/DashboardPage";
 import HomePageLayout from "../layout/HomePageLayout";
 import MainLayout from "../layout/MainLayout";
+import PrivateRouter from "./PrivateRouter";
 
 export const router = createBrowserRouter([
   {
@@ -25,7 +26,11 @@ export const router = createBrowserRouter([
       },
       {
         path: "/course/:id",
-        element: <CourseDetailsPage />,
+        element: (
+          <PrivateRouter>
+            <CourseDetailsPage />
+          </PrivateRouter>
+        ),
         loader: ({ params }) =>
           fetch(
             `http://localhost:5000/skillsphere/api/v1/courses/${params.id}`
