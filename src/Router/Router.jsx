@@ -1,14 +1,11 @@
 import { createBrowserRouter } from "react-router-dom";
-import DashboardProfile from "../components/dashboard/DashboardProfile";
-import MyClassPage from "../components/dashboard/pages/MyClassPage";
 import SignIn from "../components/form/SignIn";
 import SignUp from "../components/form/SignUp";
-import MainContentSections from "../components/menu/MainContentSections";
 import AllClassPage from "../layout/AllClassPage";
 import CourseDetailsPage from "../layout/CourseDetailsPage";
-import DashboardPage from "../layout/DashboardPage";
 import HomePageLayout from "../layout/HomePageLayout";
 import MainLayout from "../layout/MainLayout";
+import MyCartPages from "../layout/MyCartPages";
 import PrivateRouter from "./PrivateRouter";
 
 export const router = createBrowserRouter([
@@ -36,26 +33,13 @@ export const router = createBrowserRouter([
             `http://localhost:5000/skillsphere/api/v1/courses/${params.id}`
           ),
       },
-    ],
-  },
-  {
-    path: "/dashboard",
-    element: <DashboardPage />,
-    children: [
       {
-        path: "/dashboard",
-        element: <MainContentSections />,
-      },
-      {
-        path: "myclass",
-        element: <MyClassPage />,
-      },
-      {
-        path: "profile",
-        element: <DashboardProfile />,
+        path: "/cart",
+        element: <MyCartPages />,
       },
     ],
   },
+
   {
     path: "/signin",
     element: <SignIn />,

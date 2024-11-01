@@ -1,3 +1,6 @@
+import toast from "react-hot-toast";
+import { useNavigate } from "react-router-dom";
+import useAxios from "../../hooks/useAxios";
 import Faq from "../Faq";
 
 const CourseOverview = ({ loader }) => {
@@ -20,6 +23,23 @@ const CourseOverview = ({ loader }) => {
     what_you_will_learn,
     detailed_description,
   } = loader || {};
+
+  const axios = useAxios();
+  const Navigate = useNavigate();
+
+  const addToCart = async () => {
+    const cartData = {
+      ...loader,
+    };
+    try {
+      const { data } = await axios.post("/purchases", cartData);
+      toast.success("Purchases This Courses");
+      Navigate("/cart");
+    } catch (err) {
+      console.log(err);
+    }
+  };
+
   return (
     <div>
       <div className="container mx-auto p-6 grid lg:grid-cols-3 gap-8">
@@ -262,7 +282,10 @@ const CourseOverview = ({ loader }) => {
 
             {/* Course Price */}
             <p className="text-2xl font-semibold">$ {price}</p>
-            <button className="w-full border hover:bg-gray-200 border-black text-black font-semibold py-2 mt-4">
+            <button
+              onClick={addToCart}
+              className="w-full border hover:bg-gray-200 border-black text-black font-semibold py-2 mt-4"
+            >
               Add to cart
             </button>
 

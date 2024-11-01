@@ -30,17 +30,69 @@ const Navbar = () => {
       >
         My Class
       </NavLink>
+      <NavLink
+        className={({ isActive }) => (isActive ? "text-[#5C53FE]" : "")}
+        to="/shop"
+      >
+        <div className="relative inline-block">
+          {/* Heart Icon */}
+          <div className="bg-white rounded-full p-3 shadow-md">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              className="lucide lucide-heart"
+            >
+              <path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z" />
+            </svg>
+          </div>
 
-      {user?.email ? (
-        <>
-          <NavLink
-            className={({ isActive }) => (isActive ? "text-[#5C53FE]" : "")}
-            to="/dashboard"
-          >
-            Dashboard
-          </NavLink>
-        </>
-      ) : (
+          {/* Notification Badge */}
+          <span className="absolute top-0 right-0 inline-flex items-center justify-center h-5 w-5 text-xs font-bold text-white bg-blue-500 rounded-full">
+            2
+          </span>
+        </div>
+      </NavLink>
+
+      <NavLink
+        className={({ isActive }) => (isActive ? "text-[#5C53FE]" : "")}
+        to="/cart"
+      >
+        <div className="relative inline-block">
+          {/* Heart Icon */}
+          <div className="bg-white rounded-full p-3 shadow-md">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              className="lucide lucide-shopping-cart"
+            >
+              <circle cx="8" cy="21" r="1" />
+              <circle cx="19" cy="21" r="1" />
+              <path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12" />
+            </svg>
+          </div>
+
+          {/* Notification Badge */}
+          <span className="absolute top-0 right-0 inline-flex items-center justify-center h-5 w-5 text-xs font-bold text-white bg-blue-500 rounded-full">
+            2
+          </span>
+        </div>
+      </NavLink>
+
+      {!user && (
         <NavLink
           className={({ isActive }) => (isActive ? "text-[#5C53FE]" : "")}
           to="/signin"
@@ -109,11 +161,22 @@ const Navbar = () => {
                   className="mt-3 z-[1] rounded-md p-2 text-white menu dropdown-content bg-[#3b4655]"
                 >
                   <li>
+                    <a>{user?.email}</a>
+                  </li>
+                  <li>
                     <a>{user?.displayName}</a>
                   </li>
                   <li>
-                    <a>{user?.email}</a>
+                    <NavLink
+                      className={({ isActive }) =>
+                        isActive ? "text-[#5C53FE]" : ""
+                      }
+                      to="/dashboard"
+                    >
+                      Dashboard
+                    </NavLink>
                   </li>
+
                   <li onClick={handleLogOut}>
                     <a>Logout</a>
                   </li>
