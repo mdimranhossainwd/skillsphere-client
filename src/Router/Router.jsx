@@ -22,6 +22,10 @@ export const router = createBrowserRouter([
         element: <AllClassPage />,
       },
       {
+        path: "/cart",
+        element: <MyCartPages />,
+      },
+      {
         path: "/course/:id",
         element: (
           <PrivateRouter>
@@ -32,10 +36,6 @@ export const router = createBrowserRouter([
           fetch(
             `http://localhost:5000/skillsphere/api/v1/courses/${params.id}`
           ),
-      },
-      {
-        path: "/cart",
-        element: <MyCartPages />,
       },
     ],
   },

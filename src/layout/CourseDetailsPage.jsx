@@ -2,7 +2,7 @@ import { useLoaderData } from "react-router-dom";
 import CourseOverview from "../components/Course/CourseOverview ";
 
 const CourseDetailsPage = () => {
-  const loader = useLoaderData();
+  const courseInfo = useLoaderData();
   const {
     _id,
     title,
@@ -21,7 +21,7 @@ const CourseDetailsPage = () => {
     requirements,
     what_you_will_learn,
     detailed_description,
-  } = loader || {};
+  } = courseInfo || {};
 
   return (
     <>
@@ -118,7 +118,7 @@ const CourseDetailsPage = () => {
           </div>
         </div>
       </div>
-      <CourseOverview loader={loader} />
+      <CourseOverview courseInfo={courseInfo} />
     </>
   );
 };

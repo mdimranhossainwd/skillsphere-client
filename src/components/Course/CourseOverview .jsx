@@ -1,9 +1,9 @@
 import toast from "react-hot-toast";
 import { useNavigate } from "react-router-dom";
+import useAuth from "../../hooks/useAuth";
 import useAxios from "../../hooks/useAxios";
 import Faq from "../Faq";
-
-const CourseOverview = ({ loader }) => {
+const CourseOverview = ({ courseInfo }) => {
   const {
     _id,
     title,
@@ -22,19 +22,22 @@ const CourseOverview = ({ loader }) => {
     requirements,
     what_you_will_learn,
     detailed_description,
-  } = loader || {};
-
+  } = courseInfo || {};
   const axios = useAxios();
-  const Navigate = useNavigate();
-
-  const addToCart = async () => {
-    const cartData = {
-      ...loader,
+  const { user } = useAuth();
+  const navigate = useNavigate();
+  // Add to Cart course Data
+  const handleAddCart = async (e) => {
+    const cartInfo = {
+      ...courseInfo,
+      userName: user?.email,
+      photo: user?.photoURL,
+      email: user?.email,
     };
     try {
-      const { data } = await axios.post("/purchases", cartData);
-      toast.success("Purchases This Courses");
-      Navigate("/cart");
+      const { data } = await axios.post("/carts", cartInfo);
+      toast.success("Add to Cart This Course");
+      navigate("/cart");
     } catch (err) {
       console.log(err);
     }
@@ -283,7 +286,7 @@ const CourseOverview = ({ loader }) => {
             {/* Course Price */}
             <p className="text-2xl font-semibold">$ {price}</p>
             <button
-              onClick={addToCart}
+              onClick={handleAddCart}
               className="w-full border hover:bg-gray-200 border-black text-black font-semibold py-2 mt-4"
             >
               Add to cart
