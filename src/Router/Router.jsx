@@ -23,7 +23,11 @@ export const router = createBrowserRouter([
       },
       {
         path: "/cart",
-        element: <MyCartPages />,
+        element: (
+          <PrivateRouter>
+            <MyCartPages />
+          </PrivateRouter>
+        ),
       },
       {
         path: "/course/:id",
