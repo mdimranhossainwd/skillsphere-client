@@ -5,7 +5,7 @@ import useAxios from "../../hooks/useAxios";
 import Faq from "../Faq";
 const CourseOverview = ({ courseInfo }) => {
   const {
-    _id,
+    _id: courseId,
     title,
     description,
     instructor,
@@ -26,6 +26,7 @@ const CourseOverview = ({ courseInfo }) => {
   const axios = useAxios();
   const { user } = useAuth();
   const navigate = useNavigate();
+
   // Add to Cart course Data
   const handleAddCart = async (e) => {
     const cartInfo = {
@@ -33,6 +34,7 @@ const CourseOverview = ({ courseInfo }) => {
       userName: user?.email,
       photo: user?.photoURL,
       email: user?.email,
+      status: "Pending",
     };
     try {
       const { data } = await axios.post("/carts", cartInfo);
@@ -286,7 +288,7 @@ const CourseOverview = ({ courseInfo }) => {
             {/* Course Price */}
             <p className="text-2xl font-semibold">$ {price}</p>
             <button
-              onClick={handleAddCart}
+              onClick={()=>handleAddCart(courseId)}
               className="w-full border hover:bg-gray-200 border-black text-black font-semibold py-2 mt-4"
             >
               Add to cart

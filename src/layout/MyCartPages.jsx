@@ -1,10 +1,20 @@
+import toast from "react-hot-toast";
 import { NavLink } from "react-router-dom";
+import useAxios from "../hooks/useAxios";
 import useCourse from "../hooks/useCourse";
 
 const MyCartPages = () => {
-  const [course] = useCourse();
+  const [course, refetch] = useCourse();
+  const axios = useAxios();
   console.log(course);
   const totalCost = course.reduce((acc, cur) => acc + cur.price, 0);
+
+  const handleDeleted = async (id) => {
+    const { data } = await axios.delete(`/carts/${id}`);
+    toast.success("Deleted Successfully");
+    refetch();
+    console.log(data);
+  };
 
   return (
     <div className="container mx-auto">
@@ -53,25 +63,26 @@ const MyCartPages = () => {
                 {/* Price Details */}
                 <div className="flex gap-5 md:ml-4">
                   <NavLink>
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      strokeWidth="2"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      className="lucide w-5 mt-1 lucide-trash-2"
-                    >
-                      <path d="M3 6h18" />
-                      <path d="M19 6v14c0 1-1 2-2 2H7c-1 0-2-1-2-2V6" />
-                      <path d="M8 6V4c0-1 1-2 2-2h4c1 0 2 1 2 2v2" />
-                      <line x1="10" x2="10" y1="11" y2="17" />
-                      <line x1="14" x2="14" y1="11" y2="17" />
-                    </svg>
+                    <button onClick={() => handleDeleted(item?._id)}>
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        strokeWidth="2"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        className="lucide w-5 mt-1 lucide-trash-2"
+                      >
+                        <path d="M3 6h18" />
+                        <path d="M19 6v14c0 1-1 2-2 2H7c-1 0-2-1-2-2V6" />
+                        <path d="M8 6V4c0-1 1-2 2-2h4c1 0 2 1 2 2v2" />
+                        <line x1="10" x2="10" y1="11" y2="17" />
+                        <line x1="14" x2="14" y1="11" y2="17" />
+                      </svg>
+                    </button>
                   </NavLink>
-
-                  <p className="text-xl font-semibold text-purple-600">
+                  <p className="text-xl font-semibold text-[#5C53FE]">
                     ${item?.price}
                   </p>
                 </div>
