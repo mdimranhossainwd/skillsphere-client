@@ -5,7 +5,7 @@ import useAxios from "../../hooks/useAxios";
 import Faq from "../Faq";
 const CourseOverview = ({ courseInfo }) => {
   const {
-    _id: courseId,
+    _id: cartId,
     title,
     description,
     instructor,
@@ -28,16 +28,34 @@ const CourseOverview = ({ courseInfo }) => {
   const navigate = useNavigate();
 
   // Add to Cart course Data
+
+  const cartData = {
+    cartId: cartId,
+    title: title,
+    description: description,
+    instructor: instructor,
+    price: price,
+    rating: rating,
+    total_reviews: total_reviews,
+    category: category,
+    image_url: image_url,
+    language: language,
+    course_level: course_level,
+    duration: duration,
+    enrolled_students: enrolled_students,
+    curriculum: curriculum,
+    requirements: requirements,
+    what_you_will_learn: what_you_will_learn,
+    detailed_description: detailed_description,
+    userName: user?.email,
+    photo: user?.photoURL,
+    email: user?.email,
+    status: "Pending",
+  };
+
   const handleAddCart = async (e) => {
-    const cartInfo = {
-      ...courseInfo,
-      userName: user?.email,
-      photo: user?.photoURL,
-      email: user?.email,
-      status: "Pending",
-    };
     try {
-      const { data } = await axios.post("/carts", cartInfo);
+      const { data } = await axios.post("/carts", cartData);
       toast.success("Add to Cart This Course");
       navigate("/cart");
     } catch (err) {
@@ -288,7 +306,7 @@ const CourseOverview = ({ courseInfo }) => {
             {/* Course Price */}
             <p className="text-2xl font-semibold">$ {price}</p>
             <button
-              onClick={()=>handleAddCart(courseId)}
+              onClick={handleAddCart}
               className="w-full border hover:bg-gray-200 border-black text-black font-semibold py-2 mt-4"
             >
               Add to cart

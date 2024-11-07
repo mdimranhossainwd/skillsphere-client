@@ -3,6 +3,7 @@ import SignIn from "../components/form/SignIn";
 import SignUp from "../components/form/SignUp";
 import AllClassPage from "../layout/AllClassPage";
 import CourseDetailsPage from "../layout/CourseDetailsPage";
+import DashboardLayout from "../layout/DashboardLayout";
 import HomePageLayout from "../layout/HomePageLayout";
 import MainLayout from "../layout/MainLayout";
 import MyCartPages from "../layout/MyCartPages";
@@ -42,6 +43,10 @@ export const router = createBrowserRouter([
           ),
       },
     ],
+  },
+  {
+    path: "/dashboard",
+    element: <DashboardLayout />,
   },
 
   {

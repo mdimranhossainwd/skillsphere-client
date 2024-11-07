@@ -1,8 +1,10 @@
 import { NavLink } from "react-router-dom";
 import useAuth from "../hooks/useAuth";
+import useCourse from "../hooks/useCourse";
 
 const Navbar = () => {
   const { user, logOut } = useAuth();
+  const [course] = useCourse();
 
   const handleLogOut = () => {
     logOut()
@@ -33,32 +35,7 @@ const Navbar = () => {
       <NavLink
         className={({ isActive }) => (isActive ? "text-[#5C53FE]" : "")}
         to="/shop"
-      >
-        <div className="relative inline-block">
-          {/* Heart Icon */}
-          <div className="bg-white rounded-full p-3 shadow-md">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="24"
-              height="24"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="2"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              className="lucide lucide-heart"
-            >
-              <path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z" />
-            </svg>
-          </div>
-
-          {/* Notification Badge */}
-          <span className="absolute top-0 right-0 inline-flex items-center justify-center h-5 w-5 text-xs font-bold text-white bg-blue-500 rounded-full">
-            2
-          </span>
-        </div>
-      </NavLink>
+      ></NavLink>
 
       <NavLink
         className={({ isActive }) => (isActive ? "text-[#5C53FE]" : "")}
@@ -66,7 +43,7 @@ const Navbar = () => {
       >
         <div className="relative inline-block">
           {/* Heart Icon */}
-          <div className="bg-white rounded-full p-3 shadow-md">
+          <div className="bg-white rounded-full p-3 ">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="24"
@@ -86,8 +63,8 @@ const Navbar = () => {
           </div>
 
           {/* Notification Badge */}
-          <span className="absolute top-0 right-0 inline-flex items-center justify-center h-5 w-5 text-xs font-bold text-white bg-blue-500 rounded-full">
-            2
+          <span className="absolute top-0 right-0 inline-flex items-center justify-center h-5 w-5 text-xs font-bold text-white bg-black rounded-full">
+            {course.length}
           </span>
         </div>
       </NavLink>
@@ -160,12 +137,22 @@ const Navbar = () => {
                   tabIndex={0}
                   className="mt-3 z-[1] rounded-md p-2 text-white menu dropdown-content bg-[#3b4655]"
                 >
+                  <div className="flex border-b items-center gap-4">
+                    <img
+                      className="w-14 h-14 rounded-full"
+                      src={user?.photoURL}
+                      alt=""
+                    />
+                    <div>
+                      <h4 className="font-bold text-md">{user?.displayName}</h4>
+                      <p className="text-[12px]">{user?.email}</p>
+                    </div>
+                  </div>
+                  <li>Wishlists</li>
                   <li>
-                    <a>{user?.email}</a>
+                    <NavLink>My Cart</NavLink>
                   </li>
-                  <li>
-                    <a>{user?.displayName}</a>
-                  </li>
+
                   <li>
                     <NavLink
                       className={({ isActive }) =>
