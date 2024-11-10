@@ -148,9 +148,12 @@ const Navbar = () => {
                       <p className="text-[12px]">{user?.email}</p>
                     </div>
                   </div>
-                  <li>Wishlists</li>
-                  <li>
-                    <NavLink>My Cart</NavLink>
+                  <li className="text-[14px]">
+                    <span>Wishlists</span>
+                  </li>
+                  <li className=" text-[14px]">
+                    {" "}
+                    <span>My Cart</span>
                   </li>
 
                   <li>
