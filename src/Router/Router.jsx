@@ -7,6 +7,7 @@ import DashboardLayout from "../layout/DashboardLayout";
 import HomePageLayout from "../layout/HomePageLayout";
 import MainLayout from "../layout/MainLayout";
 import MyCartPages from "../layout/MyCartPages";
+import Profile from "../shared/Profile";
 import PrivateRouter from "./PrivateRouter";
 
 export const router = createBrowserRouter([
@@ -47,6 +48,12 @@ export const router = createBrowserRouter([
   {
     path: "/dashboard",
     element: <DashboardLayout />,
+    children: [
+      {
+        path: "profile",
+        element: <Profile />,
+      },
+    ],
   },
 
   {
