@@ -11,7 +11,7 @@ const Profile = () => {
           Welcome Back, {user?.displayName}
         </h2>
       </div>
-      <div className="bg-[#5853b9] px-8 py-16 mx-8 text-center justify-center items-center space-y-7 w-1/2">
+      <div className="bg-gradient-to-br from-[#6a66cc] to-[#7771e6] px-8 py-16 mx-8 text-center justify-center items-center space-y-7 w-1/2 rounded-md">
         <div>
           <img
             className="w-24 h-24 mx-auto rounded-full object-cover border-4 border-white"
@@ -19,7 +19,9 @@ const Profile = () => {
             alt="Profile"
           />
         </div>
-        <h2 className="text-lg font-playwrite">{user?.displayName}</h2>
+        <h2 className="text-lg font-playwrite font-semibold">
+          {user?.displayName}
+        </h2>
       </div>
     </div>
   );

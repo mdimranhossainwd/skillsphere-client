@@ -30,6 +30,7 @@ const SignUp = () => {
         name,
         email,
         photo,
+        role: "students",
       });
       console.log(data);
 

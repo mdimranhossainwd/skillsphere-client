@@ -1,45 +1,19 @@
-import { NavLink } from "react-router-dom";
 import useAuth from "../hooks/useAuth";
+import useRole from "../hooks/useRole";
+import AdminMenu from "./menu/AdminMenu";
+import InstructorMenu from "./menu/InstructorMenu";
+import UserMenu from "./menu/UserMenu";
 
 const DashboardMenu = () => {
   const { user } = useAuth();
+  const [role] = useRole();
+  console.log(role);
 
   const menu = (
     <>
-      <NavLink
-        className={({ isActive }) => (isActive ? "text-[#28b485]" : "")}
-        to="profile"
-      >
-        My Profile
-      </NavLink>
-
-      <NavLink
-        className={({ isActive }) => (isActive ? "text-[#28b485]" : "")}
-        to="add-product"
-      >
-        My Class
-      </NavLink>
-
-      <NavLink
-        className={({ isActive }) => (isActive ? "text-[#28b485]" : "")}
-        to="my-product"
-      >
-        Certificate
-      </NavLink>
-
-      <NavLink
-        className={({ isActive }) => (isActive ? "text-[#28b485]" : "")}
-        to="review-queue"
-      >
-        Education
-      </NavLink>
-
-      <NavLink
-        className={({ isActive }) => (isActive ? "text-[#28b485]" : "")}
-        to="payment"
-      >
-        Payment History
-      </NavLink>
+      {role === "students" && <UserMenu />}
+      {role === "instructor" && <InstructorMenu />}
+      {role === "admin" && <AdminMenu />}
     </>
   );
 

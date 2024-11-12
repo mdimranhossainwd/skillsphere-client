@@ -29,6 +29,7 @@ const SignIn = () => {
         email: result?.user?.email,
         name: result?.user?.displayName,
         photo: result?.user?.photoURL,
+        role: "students",
       });
       console.log(data);
       navigate("/");

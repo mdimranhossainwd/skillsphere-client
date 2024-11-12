@@ -123,7 +123,7 @@ const Navbar = () => {
         <>
           {user?.email ? (
             <>
-              <div className="dropdown dropdown-end ml-28 md:ml-12">
+              <div className="dropdown dropdown-end ml-28 ">
                 <div
                   tabIndex={0}
                   role="button"
