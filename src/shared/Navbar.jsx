@@ -137,24 +137,10 @@ const Navbar = () => {
                   tabIndex={0}
                   className="mt-3 z-[1] rounded-md p-2 text-white menu dropdown-content bg-[#3b4655]"
                 >
-                  <div className="flex border-b items-center gap-4">
-                    <img
-                      className="w-14 h-14 rounded-full"
-                      src={user?.photoURL}
-                      alt=""
-                    />
-                    <div>
-                      <h4 className="font-bold text-md">{user?.displayName}</h4>
-                      <p className="text-[12px]">{user?.email}</p>
-                    </div>
+                  <div className="px-5 border-b pb-2">
+                    <h4 className="font-bold text-md">{user?.displayName}</h4>
+                    <p className="text-[12px]">{user?.email}</p>
                   </div>
-                  <li className="text-[14px]">
-                    <span>Wishlists</span>
-                  </li>
-                  <li className=" text-[14px]">
-                    {" "}
-                    <span>My Cart</span>
-                  </li>
 
                   <li>
                     <NavLink
