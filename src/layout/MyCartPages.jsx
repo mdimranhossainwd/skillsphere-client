@@ -6,7 +6,7 @@ import useCourse from "../hooks/useCourse";
 import Modal from "../shared/Modal";
 
 const MyCartPages = () => {
-  const [isOpen, setIsOpen] = useState(true);
+  const [isOpen, setIsOpen] = useState(false);
   const [course, refetch] = useCourse();
   const axios = useAxios();
   console.log(course);
