@@ -1,9 +1,12 @@
+import { useState } from "react";
 import toast from "react-hot-toast";
 import { NavLink } from "react-router-dom";
 import useAxios from "../hooks/useAxios";
 import useCourse from "../hooks/useCourse";
+import Modal from "../shared/Modal";
 
 const MyCartPages = () => {
+  const [isOpen, setIsOpen] = useState(true);
   const [course, refetch] = useCourse();
   const axios = useAxios();
   console.log(course);
@@ -100,9 +103,13 @@ const MyCartPages = () => {
           <p className="text-gray-500 text-sm line-through">$74.99</p>
           <p className="text-green-600 text-sm">83% off</p>
 
-          <button className="w-full bg-blue-600 font-semibold text-white py-2 rounded-md mt-4 hover:bg-[#5C53FE]">
+          <button
+            onClick={() => setIsOpen(!isOpen)}
+            className="w-full bg-blue-600 font-semibold text-white py-2 rounded-md mt-4 hover:bg-[#5C53FE]"
+          >
             Checkout
           </button>
+          <Modal isOpen={isOpen} setIsOpen={setIsOpen} />
 
           <div className="mt-6">
             <h3 className="text-lg font-semibold">Promotions</h3>
