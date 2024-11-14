@@ -1,7 +1,13 @@
 import { Dialog, Transition } from "@headlessui/react";
+import { Elements } from "@stripe/react-stripe-js";
 import { Fragment } from "react";
 
-const Modal = ({ isOpen, setIsOpen }) => {
+const stripePromise = loadStripe(import.meta.env.VITE_SKILLSPHERE_PK_TEST_KEY);
+
+import { loadStripe } from "@stripe/stripe-js";
+import CheckoutForm from "../components/form/CheckoutForm";
+
+const Modal = ({ isOpen, setIsOpen, course }) => {
   function closeModal() {
     setIsOpen(false);
   }
@@ -38,24 +44,11 @@ const Modal = ({ isOpen, setIsOpen }) => {
                     as="h3"
                     className="text-lg font-medium leading-6 text-gray-900"
                   >
-                    Payment successful
+                    Payment
                   </Dialog.Title>
-                  <div className="mt-2">
-                    <p className="text-sm text-gray-500">
-                      Your payment has been successfully submitted. We’ve sent
-                      you an email with all of the details of your order.
-                    </p>
-                  </div>
-
-                  <div className="mt-4">
-                    <button
-                      type="button"
-                      className="inline-flex justify-center rounded-md border border-transparent bg-blue-100 px-4 py-2 text-sm font-medium text-blue-900 hover:bg-blue-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
-                      onClick={closeModal}
-                    >
-                      Got it, thanks!
-                    </button>
-                  </div>
+                  <Elements stripe={stripePromise}>
+                    <CheckoutForm />
+                  </Elements>
                 </Dialog.Panel>
               </Transition.Child>
             </div>
