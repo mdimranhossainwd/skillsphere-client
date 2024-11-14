@@ -15,6 +15,10 @@ const CheckoutForm = () => {
   const { user } = useAuth();
   const axios = useAxios();
   const navigate = useNavigate();
+  const courseObject = course.reduce((acc, item, index) => {
+    acc[index] = item;
+    return acc;
+  }, {});
 
   useEffect(() => {
     if (totalCost) {
@@ -73,6 +77,14 @@ const CheckoutForm = () => {
           name: user?.displayName,
           status: "verified",
           transId: paymentIntent.id,
+          courses: course.map((item) => ({
+            title: item?.title,
+            description: item?.description,
+            instructor: item?.instructor,
+            image_url: item?.image_url,
+            language: item?.language,
+            duration: item?.duration,
+          })),
         };
         try {
           const { data } = await axios.post("/payment", paymentInfo);
