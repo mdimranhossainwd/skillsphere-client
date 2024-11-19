@@ -2,6 +2,7 @@ import { createBrowserRouter } from "react-router-dom";
 import SignIn from "../components/form/SignIn";
 import SignUp from "../components/form/SignUp";
 import AllClassPage from "../layout/AllClassPage";
+import AllUsersPage from "../layout/AllUsersPage";
 import CourseDetailsPage from "../layout/CourseDetailsPage";
 import DashboardLayout from "../layout/DashboardLayout";
 import HomePageLayout from "../layout/HomePageLayout";
@@ -52,6 +53,11 @@ export const router = createBrowserRouter([
       {
         path: "profile",
         element: <Profile />,
+      },
+      // Admin All Routes
+      {
+        path: "manage-user",
+        element: <AllUsersPage />,
       },
     ],
   },
