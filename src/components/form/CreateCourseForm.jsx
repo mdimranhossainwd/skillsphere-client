@@ -2,7 +2,7 @@ const CreateCourseForm = () => {
   return (
     <>
       <div className="max-w-6xl mx-auto p-6 rounded-lg shadow-md">
-        <h2 className="text-4xl font-arima pt-10 text-center font-bold">
+        <h2 className="text-4xl font-arima py-5 mb-6 text-center font-bold">
           Create a New Course
         </h2>
         <form>
@@ -171,7 +171,7 @@ const CreateCourseForm = () => {
           <div className="mt-6">
             <button
               type="submit"
-              className="w-full bg-blue-600 text-white py-2 px-4 rounded hover:bg-blue-700"
+              className="w-full bg-[#5C53F2] text-white py-2 px-4 rounded hover:bg-blue-700"
             >
               Submit Course
             </button>

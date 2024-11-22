@@ -4,11 +4,11 @@ import DashboardMenu from "../components/DashboardMenu";
 const DashboardLayout = () => {
   return (
     <div>
-      <div className="lg:flex">
-        <div className="min-h-full bg-[#2C2C2C]">
+      <div className="lg:flex h-screen overflow-hidden">
+        <div className="h-screen bg-[#2C2C2C] fixed ">
           <DashboardMenu />
         </div>
-        <div className="md:flex-1">
+        <div className="md:flex-1 overflow-y-auto ml-64">
           <Outlet />
         </div>
       </div>
