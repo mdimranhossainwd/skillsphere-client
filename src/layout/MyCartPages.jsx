@@ -1,7 +1,7 @@
 import { useState } from "react";
 import WishlistCard from "../components/card/WishlistCard";
 import useCourse from "../hooks/useCourse";
-import Modal from "../shared/Modal";
+import PaymentModal from "../ui/PaymentModal";
 
 const MyCartPages = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -54,7 +54,11 @@ const MyCartPages = () => {
             >
               Checkout
             </button>
-            <Modal course={course} isOpen={isOpen} setIsOpen={setIsOpen} />
+            <PaymentModal
+              course={course}
+              isOpen={isOpen}
+              setIsOpen={setIsOpen}
+            />
 
             <div className="mt-6">
               <h3 className="text-lg font-semibold">Promotions</h3>

@@ -1,13 +1,11 @@
 import { Dialog, Transition } from "@headlessui/react";
-import { Elements } from "@stripe/react-stripe-js";
 import { Fragment } from "react";
 
 const stripePromise = loadStripe(import.meta.env.VITE_SKILLSPHERE_PK_TEST_KEY);
 
 import { loadStripe } from "@stripe/stripe-js";
-import CheckoutForm from "../components/form/CheckoutForm";
 
-const Modal = ({ isOpen, setIsOpen, course }) => {
+const Modal = ({ isOpen, setIsOpen, title, children }) => {
   function closeModal() {
     setIsOpen(false);
   }
@@ -44,11 +42,12 @@ const Modal = ({ isOpen, setIsOpen, course }) => {
                     as="h3"
                     className="text-lg font-medium leading-6 text-gray-900"
                   >
-                    Payment
+                    {title}
                   </Dialog.Title>
-                  <Elements stripe={stripePromise}>
+                  {/* <Elements stripe={stripePromise}>
                     <CheckoutForm />
-                  </Elements>
+                  </Elements> */}
+                  {children}
                 </Dialog.Panel>
               </Transition.Child>
             </div>
