@@ -1,4 +1,3 @@
-import React from "react";
 import { NavLink } from "react-router-dom";
 
 const AdminMenu = () => {
@@ -6,7 +5,7 @@ const AdminMenu = () => {
     <>
       <NavLink
         className={({ isActive }) => (isActive ? "text-[#5751d4]" : "")}
-        to="profile"
+        to="manage-course"
       >
         Manage-Courses
       </NavLink>
