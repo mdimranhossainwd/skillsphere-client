@@ -40,7 +40,7 @@ const CreateCourseForm = () => {
     const what_you_will_learn =
       form.what_you_will_learn?.value.split("\n") || [];
     const detailed_description = form.detailed_description?.value ?? "";
-
+    const status = "Pending";
     const newCourse = {
       title,
       description,
@@ -58,11 +58,13 @@ const CreateCourseForm = () => {
       requirements,
       what_you_will_learn,
       detailed_description,
+      status,
     };
 
     try {
       const { data } = await axios.post("/instructor-course", newCourse);
-      toast.success("Sucess");
+      toast.success("The Course has been successfully added");
+      form.reset();
     } catch (err) {
       console.log(err);
     }
