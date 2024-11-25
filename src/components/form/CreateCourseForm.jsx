@@ -1,8 +1,10 @@
 import toast from "react-hot-toast";
+import useAuth from "../../hooks/useAuth";
 import useAxios from "../../hooks/useAxios";
 
 const CreateCourseForm = () => {
   const axios = useAxios();
+  const { user } = useAuth();
 
   const handleAddCourse = async (e) => {
     e.preventDefault();
@@ -58,6 +60,7 @@ const CreateCourseForm = () => {
       requirements,
       what_you_will_learn,
       detailed_description,
+      email: user?.email,
       status,
     };
 
