@@ -25,7 +25,7 @@ const AllUsersPage = () => {
         <h2 className="text-4xl font-arima pt-10 text-center font-bold">
           Manage All User's
         </h2>
-        <div className="px-3 md:px-6">
+        <div className="px-3 md:px-6 mt-7">
           <table className="table w-full">
             <thead className="w-full rounded-md text-white bg-gradient-to-r from-blue-400 via-blue-400 to-blue-600 text-center">
               <tr className="text-lg font-pt">
