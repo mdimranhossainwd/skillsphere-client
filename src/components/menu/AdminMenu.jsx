@@ -19,7 +19,7 @@ const AdminMenu = () => {
 
       <NavLink
         className={({ isActive }) => (isActive ? "text-[#28b485]" : "")}
-        to="my-product"
+        to="approve-courses"
       >
         Approve-Courses
       </NavLink>

@@ -4,6 +4,7 @@ import SignIn from "../components/form/SignIn";
 import SignUp from "../components/form/SignUp";
 import AllClassPage from "../layout/AllClassPage";
 import AllUsersPage from "../layout/AllUsersPage";
+import ApprovedCoursePages from "../layout/ApprovedCoursePages";
 import CourseDetailsPage from "../layout/CourseDetailsPage";
 import DashboardLayout from "../layout/DashboardLayout";
 import HomePageLayout from "../layout/HomePageLayout";
@@ -71,6 +72,10 @@ export const router = createBrowserRouter([
       {
         path: "manage-user",
         element: <AllUsersPage />,
+      },
+      {
+        path: "approve-courses",
+        element: <ApprovedCoursePages />,
       },
     ],
   },
