@@ -7,6 +7,7 @@ import AllUsersPage from "../layout/AllUsersPage";
 import CourseDetailsPage from "../layout/CourseDetailsPage";
 import DashboardLayout from "../layout/DashboardLayout";
 import HomePageLayout from "../layout/HomePageLayout";
+import InstructorCoursePage from "../layout/InstructorCoursePage";
 import MainLayout from "../layout/MainLayout";
 import MyCartPages from "../layout/MyCartPages";
 import Profile from "../shared/Profile";
@@ -59,6 +60,11 @@ export const router = createBrowserRouter([
       {
         path: "create-course",
         element: <CreateCourseForm />,
+      },
+
+      {
+        path: "my-created-course",
+        element: <InstructorCoursePage />,
       },
 
       // Admin All Routes

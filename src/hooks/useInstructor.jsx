@@ -1,7 +1,7 @@
 import { useQuery } from "@tanstack/react-query";
 import useAuth from "./useAuth";
 import useAxios from "./useAxios";
-const useCourse = () => {
+const useInstructor = () => {
   const { user } = useAuth();
   const axios = useAxios();
 
@@ -17,4 +17,4 @@ const useCourse = () => {
   return [instructor, refetch];
 };
 
-export default useCourse;
+export default useInstructor;

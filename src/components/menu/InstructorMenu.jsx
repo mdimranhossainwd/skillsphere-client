@@ -5,7 +5,7 @@ const InstructorMenu = () => {
     <>
       <NavLink
         className={({ isActive }) => (isActive ? "text-[#28b485]" : "")}
-        to="add-product"
+        to="my-created-course"
       >
         My-Courses
       </NavLink>
