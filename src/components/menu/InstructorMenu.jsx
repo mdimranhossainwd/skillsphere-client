@@ -4,35 +4,35 @@ const InstructorMenu = () => {
   return (
     <>
       <NavLink
-        className={({ isActive }) => (isActive ? "text-[#28b485]" : "")}
+        className={({ isActive }) => (isActive ? "text-secondary" : "")}
         to="my-created-course"
       >
         My-Courses
       </NavLink>
 
       <NavLink
-        className={({ isActive }) => (isActive ? "text-[#28b485]" : "")}
+        className={({ isActive }) => (isActive ? "text-secondary" : "")}
         to="create-course"
       >
         Create-Course
       </NavLink>
 
       <NavLink
-        className={({ isActive }) => (isActive ? "text-[#28b485]" : "")}
+        className={({ isActive }) => (isActive ? "text-secondary" : "")}
         to="my-product"
       >
         Assainments
       </NavLink>
 
       <NavLink
-        className={({ isActive }) => (isActive ? "text-[#28b485]" : "")}
+        className={({ isActive }) => (isActive ? "text-secondary" : "")}
         to="review-queue"
       >
         Review
       </NavLink>
 
       <NavLink
-        className={({ isActive }) => (isActive ? "text-[#28b485]" : "")}
+        className={({ isActive }) => (isActive ? "text-secondary" : "")}
         to="payment"
       >
         Earnings

@@ -4,42 +4,42 @@ const AdminMenu = () => {
   return (
     <>
       <NavLink
-        className={({ isActive }) => (isActive ? "text-[#5751d4]" : "")}
+        className={({ isActive }) => (isActive ? "text-secondary" : "")}
         to="manage-course"
       >
         Manage-Courses
       </NavLink>
 
       <NavLink
-        className={({ isActive }) => (isActive ? "text-blue-500 " : "")}
+        className={({ isActive }) => (isActive ? "text-secondary " : "")}
         to="manage-user"
       >
         Manage-User's
       </NavLink>
 
       <NavLink
-        className={({ isActive }) => (isActive ? "text-[#28b485]" : "")}
+        className={({ isActive }) => (isActive ? "text-secondary" : "")}
         to="approve-courses"
       >
         Approve-Courses
       </NavLink>
 
       <NavLink
-        className={({ isActive }) => (isActive ? "text-[#28b485]" : "")}
+        className={({ isActive }) => (isActive ? "text-secondary" : "")}
         to="my-product"
       >
         Reports
       </NavLink>
 
       <NavLink
-        className={({ isActive }) => (isActive ? "text-[#28b485]" : "")}
+        className={({ isActive }) => (isActive ? "text-secondary" : "")}
         to="review-queue"
       >
         Support Requests
       </NavLink>
 
       <NavLink
-        className={({ isActive }) => (isActive ? "text-[#28b485]" : "")}
+        className={({ isActive }) => (isActive ? "text-secondary" : "")}
         to="payment"
       >
         Account-Setting

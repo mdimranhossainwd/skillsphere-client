@@ -6,7 +6,7 @@ const BusinessBanner = () => {
           <h3 className="text-2xl mb-4">
             {" "}
             <span className="font-bold">Skillsphere</span>{" "}
-            <span className="text-[#34B4F4]">business</span>
+            <span className="text-secondary">business</span>
           </h3>
           <div>
             <h2 className="text-3xl lg:text-4xl font-medium mb-5">

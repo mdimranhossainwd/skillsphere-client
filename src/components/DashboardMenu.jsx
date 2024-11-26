@@ -21,13 +21,13 @@ const DashboardMenu = () => {
     <div>
       <aside className="md:w-64 min-h-screen bg-[#3f3f3f] p-4">
         <div className="flex items-center">
-          <h3 className="text-2xl text-center flex items-center justify-center font-josefin mt-5 text-[#5C53FE] font-bold ">
+          <h3 className="text-2xl text-center flex items-center justify-center font-josefin mt-5 font-bold bg-gradient-to-r from-secondary via-green-200 to-primary bg-clip-text text-transparent">
             SkillSphere
           </h3>
         </div>
         <div className="divider"></div>
 
-        <nav className="space-y-4 text-white pt-4 items-center justify-center grid grid-cols-1 font-josefin">
+        <nav className="space-y-4 text-white pt-1 items-center justify-center grid grid-cols-1 font-josefin">
           {menu}
         </nav>
       </aside>

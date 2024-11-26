@@ -4,42 +4,42 @@ const UserMenu = () => {
   return (
     <>
       <NavLink
-        className={({ isActive }) => (isActive ? "text-[#5751d4]" : "")}
+        className={({ isActive }) => (isActive ? "text-secondary" : "")}
         to="profile"
       >
         My Profile
       </NavLink>
 
       <NavLink
-        className={({ isActive }) => (isActive ? "text-[#28b485]" : "")}
+        className={({ isActive }) => (isActive ? "text-secondary" : "")}
         to="add-product"
       >
         My-Courses
       </NavLink>
 
       <NavLink
-        className={({ isActive }) => (isActive ? "text-[#28b485]" : "")}
+        className={({ isActive }) => (isActive ? "text-secondary" : "")}
         to="my-product"
       >
         Certificate
       </NavLink>
 
       <NavLink
-        className={({ isActive }) => (isActive ? "text-[#28b485]" : "")}
+        className={({ isActive }) => (isActive ? "text-secondary" : "")}
         to="my-product"
       >
         Wishlists
       </NavLink>
 
       <NavLink
-        className={({ isActive }) => (isActive ? "text-[#28b485]" : "")}
+        className={({ isActive }) => (isActive ? "text-secondary" : "")}
         to="review-queue"
       >
         Support
       </NavLink>
 
       <NavLink
-        className={({ isActive }) => (isActive ? "text-[#28b485]" : "")}
+        className={({ isActive }) => (isActive ? "text-secondary" : "")}
         to="payment"
       >
         Account-Setting

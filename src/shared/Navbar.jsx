@@ -15,30 +15,30 @@ const Navbar = () => {
   const navItem = (
     <>
       <NavLink
-        className={({ isActive }) => (isActive ? "text-[#5C53FE]" : "")}
+        className={({ isActive }) => (isActive ? "text-secondary" : "")}
         to="/"
       >
         Home
       </NavLink>
       <NavLink
-        className={({ isActive }) => (isActive ? "text-[#5C53FE]" : "")}
+        className={({ isActive }) => (isActive ? "text-secondary" : "")}
         to="/allclass"
       >
         All Class
       </NavLink>
       <NavLink
-        className={({ isActive }) => (isActive ? "text-[#5C53FE]" : "")}
+        className={({ isActive }) => (isActive ? "text-secondary" : "")}
         to="/shop"
       >
         My Class
       </NavLink>
       <NavLink
-        className={({ isActive }) => (isActive ? "text-[#5C53FE]" : "")}
+        className={({ isActive }) => (isActive ? "text-secondary" : "")}
         to="/shop"
       ></NavLink>
 
       <NavLink
-        className={({ isActive }) => (isActive ? "text-[#5C53FE]" : "")}
+        className={({ isActive }) => (isActive ? "text-secondary" : "")}
         to="/cart"
       >
         <div className="relative inline-block">
@@ -112,7 +112,9 @@ const Navbar = () => {
               {navItem}
             </ul>
           </div>
-          <h3 className="text-xl text-[#5C53FE] font-bold">SkillSphere</h3>
+          <h3 className="font-bold text-2xl bg-gradient-to-r from-primary via-green-300 to-secondary bg-clip-text text-transparent">
+            SkillSphere
+          </h3>
         </div>
         <div className="navbar-end hidden lg:flex">
           <ul className="menu menu-horizontal px-1 items-center text-black text-[16px] gap-5 font-arima font-semibold">

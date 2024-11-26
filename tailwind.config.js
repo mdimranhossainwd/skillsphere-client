@@ -7,6 +7,10 @@ export default {
         playwrite: ["Playwrite GB S", "cursive"],
         arima: ["Arima", "system-ui"],
       },
+      colors: {
+        primary: "#7ed56f",
+        secondary: "#28b485",
+      },
     },
   },
   plugins: [require("daisyui")],
