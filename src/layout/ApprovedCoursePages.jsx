@@ -1,4 +1,5 @@
 import { useQuery } from "@tanstack/react-query";
+import toast from "react-hot-toast";
 import useAxios from "../hooks/useAxios";
 
 const ApprovedCoursePages = () => {
@@ -15,6 +16,13 @@ const ApprovedCoursePages = () => {
     queryFn: getData,
   });
   console.log(getDataInfo);
+
+  // Change the Product Status
+  const handleProductStatus = async (id, prevStatus, status) => {
+    const { data } = await axios.patch(`/pending-course/${id}`, { status });
+    refetch();
+    toast.success(`Product ${status} Successfully`);
+  };
 
   return (
     <>
@@ -46,7 +54,7 @@ const ApprovedCoursePages = () => {
                       "bg-emerald-100/60 text-emerald-500 -mt-4"
                     } ${
                       item.status === "Pending" &&
-                      "bg-blue-100/60 text-blue-500 -mt-[14px]"
+                      "bg-blue-100/60 text-blue-500 -mt-[10px]"
                     } ${
                       item.status === "Rejected" &&
                       "bg-red-100/60 text-red-500 -mt-4"
@@ -57,7 +65,13 @@ const ApprovedCoursePages = () => {
 
                   <td className="px-4 py-2 font-medium">{item?.instructor}</td>
                   <td className="flex gap-4 items-center justify-center">
-                    <button>
+                    <button
+                      onClick={() =>
+                        handleProductStatus(item._id, item.status, "Accepted")
+                      }
+                      disabled={item.status === "Accepted"}
+                      className="disabled:cursor-not-allowed"
+                    >
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
                         width="20"
@@ -73,7 +87,13 @@ const ApprovedCoursePages = () => {
                         <path d="M20 6 9 17l-5-5" />
                       </svg>
                     </button>
-                    <button>
+                    <button
+                      onClick={() =>
+                        handleProductStatus(item._id, item.status, "Rejected")
+                      }
+                      disabled={item.status === "Rejected"}
+                      className="disabled:cursor-not-allowed"
+                    >
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
                         width="20"
