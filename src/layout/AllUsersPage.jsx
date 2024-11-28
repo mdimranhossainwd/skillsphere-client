@@ -88,6 +88,7 @@ const AllUsersPage = () => {
                     item={selectedUser}
                     isOpen={isOpen}
                     setIsOpen={setIsOpen}
+                    refetch={refetch}
                   />
                 </tr>
               ))}

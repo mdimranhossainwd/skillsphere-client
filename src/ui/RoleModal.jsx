@@ -1,6 +1,20 @@
+import toast from "react-hot-toast";
+import useAxios from "../hooks/useAxios";
 import Modal from "../shared/Modal";
 
-const RoleModal = ({ isOpen, setIsOpen, item }) => {
+const RoleModal = ({ isOpen, setIsOpen, item, refetch }) => {
+  const axios = useAxios();
+  const changeRole = async (id, currentRole) => {
+    const newRole = currentRole === "students" ? "instructor" : "students";
+    try {
+      const { data } = await axios.patch(`/users/${id}`, { role: newRole });
+      toast.success(`User role updated to ${newRole}`);
+      refetch();
+    } catch (err) {
+      console.log(err);
+    }
+    console.log(currentRole);
+  };
   return (
     <>
       <Modal isOpen={isOpen} setIsOpen={setIsOpen}>
@@ -24,11 +38,17 @@ const RoleModal = ({ isOpen, setIsOpen, item }) => {
           </div>
           <hr />
           <div className="flex items-center justify-between mt-4">
-            <button className="hover:bg-gradient-to-r bg-gray-600 hover:from-primary hover:to-secondary py-2 px-5 font-medium text-white rounded-full">
+            <button
+              onClick={() => changeRole(item?._id, item?.role)}
+              className="hover:bg-gradient-to-r bg-gray-600 hover:from-primary hover:to-secondary py-2 px-5 font-medium text-white rounded-full"
+            >
               Instructor
             </button>
             <button className="bg-gradient-to-r hover:from-primary hover:to-secondary bg-gray-600 py-2 px-7 font-medium text-white rounded-full">
               Admin
+            </button>
+            <button className="bg-gradient-to-r hover:from-primary hover:to-secondary bg-gray-600 py-2 px-7 font-medium text-white rounded-full">
+              Remove
             </button>
           </div>
         </div>
