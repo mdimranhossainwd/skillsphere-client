@@ -4,6 +4,8 @@ import Modal from "../shared/Modal";
 
 const RoleModal = ({ isOpen, setIsOpen, item, refetch }) => {
   const axios = useAxios();
+
+  // Changes User's Role
   const changeRole = async (id, currentRole) => {
     const newRole = currentRole === "students" ? "instructor" : "students";
     try {
@@ -15,6 +17,20 @@ const RoleModal = ({ isOpen, setIsOpen, item, refetch }) => {
     }
     console.log(currentRole);
   };
+
+  // Deleted a user's
+  const handleUserDel = async (id) => {
+    try {
+      const { data } = await axios.delete(`/users/${id}`);
+      toast.success("This user is Removed from this Site");
+      refetch();
+    } catch (err) {
+      console.log(err);
+    }
+
+    console.log(id);
+  };
+
   return (
     <>
       <Modal isOpen={isOpen} setIsOpen={setIsOpen}>
@@ -47,7 +63,10 @@ const RoleModal = ({ isOpen, setIsOpen, item, refetch }) => {
             <button className="bg-gradient-to-r hover:from-primary hover:to-secondary bg-gray-600 py-2 px-7 font-medium text-white rounded-full">
               Admin
             </button>
-            <button className="bg-gradient-to-r hover:from-primary hover:to-secondary bg-gray-600 py-2 px-7 font-medium text-white rounded-full">
+            <button
+              onClick={() => handleUserDel(item?._id)}
+              className="bg-gradient-to-r hover:from-primary hover:to-secondary bg-gray-600 py-2 px-7 font-medium text-white rounded-full"
+            >
               Remove
             </button>
           </div>
