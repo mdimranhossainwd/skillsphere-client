@@ -12,7 +12,7 @@ const UserMenu = () => {
 
       <NavLink
         className={({ isActive }) => (isActive ? "text-secondary" : "")}
-        to="add-product"
+        to="my-course"
       >
         My-Courses
       </NavLink>

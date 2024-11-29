@@ -11,6 +11,7 @@ import HomePageLayout from "../layout/HomePageLayout";
 import InstructorCoursePage from "../layout/InstructorCoursePage";
 import MainLayout from "../layout/MainLayout";
 import MyCartPages from "../layout/MyCartPages";
+import MyCourse from "../layout/MyCourse";
 import Profile from "../shared/Profile";
 import PrivateRouter from "./PrivateRouter";
 
@@ -56,6 +57,10 @@ export const router = createBrowserRouter([
       {
         path: "profile",
         element: <Profile />,
+      },
+      {
+        path: "my-course",
+        element: <MyCourse />,
       },
       // Instructor All Routes
       {
