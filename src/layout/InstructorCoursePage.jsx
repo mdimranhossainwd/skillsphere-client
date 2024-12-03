@@ -1,8 +1,21 @@
+import toast from "react-hot-toast";
+import useAxios from "../hooks/useAxios";
 import useInstructor from "../hooks/useInstructor";
 
 const InstructorCoursePage = () => {
-  const [instructor] = useInstructor();
+  const axios = useAxios();
+  const [instructor, refetch] = useInstructor();
   console.log(instructor);
+
+  const handleDelete = async (id) => {
+    try {
+      const { data } = await axios.delete(`/instructor-own-course/${id}`);
+      toast.success("This Course Deleted Successfully ");
+      refetch();
+    } catch (err) {
+      console.log(err);
+    }
+  };
 
   return (
     <>
@@ -64,7 +77,7 @@ const InstructorCoursePage = () => {
                         <path d="m15 5 4 4" />
                       </svg>
                     </button>
-                    <button>
+                    <button onClick={() => handleDelete(item?._id)}>
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
                         width="24"
