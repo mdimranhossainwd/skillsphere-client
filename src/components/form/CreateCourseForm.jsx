@@ -270,7 +270,7 @@ const CreateCourseForm = () => {
         <div className="mt-6">
           <button
             type="submit"
-            className="w-full bg-[#5C53F2] text-white py-2 px-4 rounded hover:bg-blue-700"
+            className="w-full rounded-md text-white bg-gradient-to-r from-secondary via-green-400 to-primary hover:to-secondary  text-center py-2 font-semibold"
           >
             Submit Course
           </button>
