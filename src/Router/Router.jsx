@@ -1,4 +1,5 @@
 import { createBrowserRouter } from "react-router-dom";
+import AddAssignmentForm from "../components/form/AssainmentForm";
 import CreateCourseForm from "../components/form/CreateCourseForm";
 import SignIn from "../components/form/SignIn";
 import SignUp from "../components/form/SignUp";
@@ -72,7 +73,10 @@ export const router = createBrowserRouter([
         path: "my-created-course",
         element: <InstructorCoursePage />,
       },
-
+      {
+        path: "add-assainments",
+        element: <AddAssignmentForm />,
+      },
       // Admin All Routes
       {
         path: "manage-user",

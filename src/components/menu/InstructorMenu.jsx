@@ -19,7 +19,7 @@ const InstructorMenu = () => {
 
       <NavLink
         className={({ isActive }) => (isActive ? "text-secondary" : "")}
-        to="my-product"
+        to="add-assainments"
       >
         Assainments
       </NavLink>
