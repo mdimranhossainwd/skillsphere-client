@@ -12,7 +12,7 @@ const InstructorCoursePage = () => {
         </h2>
         <div className="px-2 md:px-5 mt-7">
           <table className="table w-full">
-            <thead className="w-full rounded-md text-white bg-gradient-to-r from-blue-400 via-blue-400 to-blue-600 text-center">
+            <thead className="w-full rounded-md text-white bg-gradient-to-r from-secondary via-green-400 to-primary text-center">
               <tr className="text-lg font-pt">
                 <th className="py-[10px]">Course Title</th>
                 <th className="py-[10px]">Category</th>

@@ -1,8 +1,15 @@
 import { Link } from "react-router-dom";
 
 const CourseCard = ({ course }) => {
-  const { _id, title, price, rating, enrolled_students, image_url } =
-    course || {};
+  const {
+    _id,
+    title,
+    price,
+    rating,
+    enrolled_students,
+    image_url,
+    instructor,
+  } = course || {};
 
   // Function to render stars based on rating
   const renderStars = (rating) => {
@@ -71,7 +78,11 @@ const CourseCard = ({ course }) => {
             <h2 className="text-md w-56 mt-2 font-bold">{title}</h2>
           </Link>
 
-          <div className="flex items-center mt-4">
+          <span className="text-[13px] font-medium text-gray-500">
+            {instructor}
+          </span>
+
+          <div className="flex items-center mt-2">
             {/* Render stars based on rating */}
             <span className="pr-1 font-semibold text-[#4D3105]">
               {rating}
