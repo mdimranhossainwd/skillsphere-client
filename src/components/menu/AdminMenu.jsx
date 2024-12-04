@@ -5,7 +5,7 @@ const AdminMenu = () => {
     <>
       <NavLink
         className={({ isActive }) => (isActive ? "text-secondary" : "")}
-        to="manage-course"
+        to="manage-courses"
       >
         Manage-Courses
       </NavLink>

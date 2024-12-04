@@ -11,6 +11,7 @@ import DashboardLayout from "../layout/DashboardLayout";
 import HomePageLayout from "../layout/HomePageLayout";
 import InstructorCoursePage from "../layout/InstructorCoursePage";
 import MainLayout from "../layout/MainLayout";
+import ManageCourse from "../layout/ManageCourse";
 import MyCartPages from "../layout/MyCartPages";
 import MyCourse from "../layout/MyCourse";
 import Profile from "../shared/Profile";
@@ -85,6 +86,10 @@ export const router = createBrowserRouter([
       {
         path: "approve-courses",
         element: <ApprovedCoursePages />,
+      },
+      {
+        path: "manage-courses",
+        element: <ManageCourse />,
       },
     ],
   },
