@@ -23,6 +23,8 @@ const CourseOverview = ({ courseInfo }) => {
     what_you_will_learn,
     detailed_description,
   } = courseInfo || {};
+  console.log(courseInfo);
+
   const axios = useAxios();
   const { user } = useAuth();
   const navigate = useNavigate();
@@ -193,7 +195,12 @@ const CourseOverview = ({ courseInfo }) => {
               <li>41 Sections </li>
               <li>23 Lectures </li>
               <li>
-                {duration} {curriculum[0].lectures[0].duration} total length
+                {duration}{" "}
+                {curriculum &&
+                  curriculum[0] &&
+                  curriculum[0].lectures &&
+                  curriculum[0].lectures[0]?.duration}{" "}
+                total length
               </li>
             </div>
             <Faq />
@@ -204,8 +211,8 @@ const CourseOverview = ({ courseInfo }) => {
           <div>
             <h2 className="text-2xl font-bold mb-4">Requirements</h2>
             <div>
-              <li>{requirements[0]}</li>
-              <li>{requirements[1]}</li>
+              <li>{requirements?.[0]}</li>
+              <li>{requirements?.[1]}</li>
             </div>
           </div>
           <hr />

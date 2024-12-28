@@ -37,7 +37,7 @@ const MyCourse = () => {
                       alt=""
                     />
                     <div>
-                      <h3 className="text-[#C1B6D3] text-xl mb-2 font-semibold">
+                      <h3 className="text-[#fff] text-xl mb-2 font-semibold">
                         {item?.title}
                       </h3>
                       <span className="text-white font-medium">
