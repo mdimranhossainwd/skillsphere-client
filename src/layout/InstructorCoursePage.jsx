@@ -1,12 +1,15 @@
 import toast from "react-hot-toast";
+import { Link } from "react-router-dom";
 import useAxios from "../hooks/useAxios";
 import useInstructor from "../hooks/useInstructor";
 
 const InstructorCoursePage = () => {
   const axios = useAxios();
   const [instructor, refetch] = useInstructor();
+
   console.log(instructor);
 
+  // Deleted a course
   const handleDelete = async (id) => {
     try {
       const { data } = await axios.delete(`/instructor-own-course/${id}`);
@@ -61,22 +64,25 @@ const InstructorCoursePage = () => {
                   </td>
                   <td className="flex gap-4 items-center justify-center">
                     <button>
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="24"
-                        height="24"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="currentColor"
-                        strokeWidth="2"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        className="lucide lucide-pencil"
-                      >
-                        <path d="M21.174 6.812a1 1 0 0 0-3.986-3.987L3.842 16.174a2 2 0 0 0-.5.83l-1.321 4.352a.5.5 0 0 0 .623.622l4.353-1.32a2 2 0 0 0 .83-.497z" />
-                        <path d="m15 5 4 4" />
-                      </svg>
+                      <Link to={`/update-course/${item._id}`}>
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="24"
+                          height="24"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          strokeWidth="2"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          className="lucide lucide-pencil"
+                        >
+                          <path d="M21.174 6.812a1 1 0 0 0-3.986-3.987L3.842 16.174a2 2 0 0 0-.5.83l-1.321 4.352a.5.5 0 0 0 .623.622l4.353-1.32a2 2 0 0 0 .83-.497z" />
+                          <path d="m15 5 4 4" />
+                        </svg>
+                      </Link>
                     </button>
+
                     <button onClick={() => handleDelete(item?._id)}>
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
