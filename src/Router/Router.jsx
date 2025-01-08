@@ -14,6 +14,7 @@ import MainLayout from "../layout/MainLayout";
 import ManageCourse from "../layout/ManageCourse";
 import MyCartPages from "../layout/MyCartPages";
 import MyCourse from "../layout/MyCourse";
+import UpdateCoursePages from "../layout/UpdateCoursePages";
 import Profile from "../shared/Profile";
 import PrivateRouter from "./PrivateRouter";
 
@@ -77,6 +78,10 @@ export const router = createBrowserRouter([
       {
         path: "add-assainments",
         element: <AddAssignmentForm />,
+      },
+      {
+        path: "update-course/:id",
+        element: <UpdateCoursePages />,
       },
       // Admin All Routes
       {

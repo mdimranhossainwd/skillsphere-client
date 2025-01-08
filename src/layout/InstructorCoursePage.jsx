@@ -64,7 +64,7 @@ const InstructorCoursePage = () => {
                   </td>
                   <td className="flex gap-4 items-center justify-center">
                     <button>
-                      <Link to={`/update-course/${item._id}`}>
+                      <Link to={`/dashboard/update-course/${item._id}`}>
                         <svg
                           xmlns="http://www.w3.org/2000/svg"
                           width="24"
