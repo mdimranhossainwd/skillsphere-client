@@ -1,11 +1,14 @@
 import { useEffect, useState } from "react";
+import toast from "react-hot-toast";
 import { useParams } from "react-router-dom";
+import useAxios from "../hooks/useAxios";
 import useInstructor from "../hooks/useInstructor";
 
 const UpdateCoursePages = () => {
   const { id } = useParams();
+  const axios = useAxios();
   console.log(id);
-  const [courseInfo] = useInstructor();
+  const [courseInfo, refetch] = useInstructor();
   const [singleCourse, setSingleCourse] = useState([]);
 
   useEffect(() => {
@@ -35,13 +38,85 @@ const UpdateCoursePages = () => {
     status,
   } = singleCourse || {};
 
+  // update product info fucntion
+  const handleUpdateCourse = async (e) => {
+    e.preventDefault();
+    const form = e.target;
+
+    const title = form.title?.value ?? "";
+    const description = form.description?.value ?? "";
+    const instructor = form.instructor?.value ?? "";
+    const price = parseFloat(form.price?.value || 0);
+    const rating = parseFloat(form.rating?.value || 0);
+    const total_reviews = parseInt(form.total_reviews?.value || 0, 10);
+    const category = form.category?.value ?? "";
+    const image_url = form.image_url?.value ?? "";
+    const language = form.language?.value ?? "";
+    const course_level = form.course_level?.value ?? "";
+    const duration = form.duration?.value ?? "";
+    const section_title = form.section_title?.value ?? "";
+    const lecture_title = form.lecture_title?.value ?? "";
+    const lecture_duration = form.lecture_duration?.value ?? "";
+    const enrolled_students = parseInt(form.enrolled_students?.value || 0, 10);
+
+    const curriculum = [
+      {
+        section_title: section_title,
+        lectures: [
+          {
+            lecture_title: lecture_title,
+            duration: lecture_duration,
+          },
+        ],
+      },
+    ];
+
+    const requirements = form.requirements?.value.split("\n") || [];
+    const what_you_will_learn =
+      form.what_you_will_learn?.value.split("\n") || [];
+    const detailed_description = form.detailed_description?.value ?? "";
+    const status = "Pending";
+    const newCourse = {
+      title,
+      description,
+      instructor,
+      price,
+      rating,
+      total_reviews,
+      category,
+      image_url,
+      language,
+      course_level,
+      duration,
+      enrolled_students,
+      curriculum,
+      requirements,
+      what_you_will_learn,
+      detailed_description,
+      status,
+    };
+
+    try {
+      const { data } = await axios.put(
+        `/instructor-own-course/${_id}`,
+        newCourse
+      );
+      toast.success("The Course Info Update successfully");
+      refetch();
+    } catch (err) {
+      console.log(err);
+    }
+
+    console.log("New Course Data:", newCourse);
+  };
+
   return (
     <>
       <div className="max-w-6xl mx-auto p-6 rounded-lg shadow-md">
         <h2 className="text-4xl font-arima py-5 mb-6 text-center font-bold">
           Update to Course Info
         </h2>
-        <form>
+        <form onSubmit={handleUpdateCourse}>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
             <div>
               <label className="block text-sm font-medium mb-2">
