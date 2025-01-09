@@ -75,7 +75,7 @@ const UpdateCoursePages = () => {
     const what_you_will_learn =
       form.what_you_will_learn?.value.split("\n") || [];
     const detailed_description = form.detailed_description?.value ?? "";
-    const status = "Pending";
+
     const newCourse = {
       title,
       description,
@@ -93,7 +93,6 @@ const UpdateCoursePages = () => {
       requirements,
       what_you_will_learn,
       detailed_description,
-      status,
     };
 
     try {
