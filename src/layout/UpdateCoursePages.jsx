@@ -1,8 +1,39 @@
+import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import useInstructor from "../hooks/useInstructor";
 
 const UpdateCoursePages = () => {
   const { id } = useParams();
   console.log(id);
+  const [courseInfo] = useInstructor();
+  const [singleCourse, setSingleCourse] = useState([]);
+
+  useEffect(() => {
+    const findCourse = courseInfo.find((item) => item._id === id);
+    setSingleCourse(findCourse);
+  }, [id, courseInfo]);
+
+  const {
+    _id,
+    title,
+    description,
+    instructor,
+    price,
+    rating,
+    total_reviews,
+    category,
+    image_url,
+    language,
+    course_level,
+    duration,
+    enrolled_students,
+    curriculum = [],
+    requirements,
+    what_you_will_learn,
+    detailed_description,
+    email,
+    status,
+  } = singleCourse || {};
 
   return (
     <>
@@ -19,7 +50,7 @@ const UpdateCoursePages = () => {
               <input
                 id="title"
                 type="text"
-                placeholder="Enter course title"
+                defaultValue={title}
                 className="w-full p-2 border rounded"
               />
             </div>
@@ -30,7 +61,7 @@ const UpdateCoursePages = () => {
               <input
                 id="instructor"
                 type="text"
-                placeholder="Instructor's name"
+                defaultValue={instructor}
                 className="w-full p-2 border rounded"
               />
             </div>
@@ -43,7 +74,7 @@ const UpdateCoursePages = () => {
               <input
                 id="price"
                 type="number"
-                placeholder="Enter price"
+                defaultValue={price}
                 className="w-full p-2 border rounded"
               />
             </div>
@@ -53,7 +84,7 @@ const UpdateCoursePages = () => {
                 id="rating"
                 type="number"
                 step="0.1"
-                placeholder="Enter rating"
+                defaultValue={rating}
                 className="w-full p-2 border rounded"
               />
             </div>
@@ -65,7 +96,7 @@ const UpdateCoursePages = () => {
               <input
                 id="total_reviews"
                 type="number"
-                placeholder="Enter total reviews"
+                defaultValue={total_reviews}
                 className="w-full p-2 border rounded"
               />
             </div>
@@ -77,7 +108,7 @@ const UpdateCoursePages = () => {
               </label>
               <input
                 type="text"
-                placeholder="Enter section title"
+                defaultValue={curriculum[0]?.section_title}
                 name="section_title"
                 className="w-full p-2 border rounded mb-4"
               />
@@ -89,7 +120,7 @@ const UpdateCoursePages = () => {
               </label>
               <input
                 type="text"
-                placeholder="Enter lecture title"
+                defaultValue={curriculum[0]?.lecture_title}
                 name="lecture_title"
                 className="w-full p-2 border rounded mb-2"
               />
@@ -101,7 +132,7 @@ const UpdateCoursePages = () => {
               </label>
               <input
                 type="text"
-                placeholder="Enter duration (e.g., 12 minutes)"
+                defaultValue={curriculum[0]?.lecture_duration}
                 name="lecture_duration"
                 className="w-full p-2 border rounded mb-4"
               />
@@ -113,7 +144,7 @@ const UpdateCoursePages = () => {
             </label>
             <textarea
               id="description"
-              placeholder="Enter course description"
+              defaultValue={description}
               rows="4"
               className="w-full p-2 border rounded"
             ></textarea>
@@ -124,7 +155,7 @@ const UpdateCoursePages = () => {
               <input
                 id="category"
                 type="text"
-                placeholder="Enter category (e.g., Web Development)"
+                defaultValue={category}
                 className="w-full p-2 border rounded"
               />
             </div>
@@ -133,7 +164,7 @@ const UpdateCoursePages = () => {
               <input
                 id="language"
                 type="text"
-                placeholder="Enter language (e.g., English)"
+                defaultValue={language}
                 className="w-full p-2 border rounded"
               />
             </div>
@@ -154,7 +185,7 @@ const UpdateCoursePages = () => {
               <input
                 id="duration"
                 type="text"
-                placeholder="Enter duration (e.g., 30 hours)"
+                defaultValue={duration}
                 className="w-full p-2 border rounded"
               />
             </div>
@@ -165,7 +196,7 @@ const UpdateCoursePages = () => {
             </label>
             <textarea
               id="requirements"
-              placeholder="Enter requirements (one per line)"
+              defaultValue={requirements}
               rows="3"
               className="w-full p-2 border rounded"
             ></textarea>
@@ -176,7 +207,7 @@ const UpdateCoursePages = () => {
             </label>
             <textarea
               id="what_you_will_learn"
-              placeholder="Enter learning objectives (one per line)"
+              defaultValue={what_you_will_learn}
               rows="3"
               className="w-full p-2 border rounded"
             ></textarea>
@@ -187,7 +218,7 @@ const UpdateCoursePages = () => {
             </label>
             <textarea
               id="detailed_description"
-              placeholder="Enter detailed course description"
+              defaultValue={detailed_description}
               rows="4"
               className="w-full p-2 border rounded"
             ></textarea>
@@ -197,7 +228,7 @@ const UpdateCoursePages = () => {
             <input
               id="image_url"
               type="text"
-              placeholder="Enter image URL"
+              defaultValue={image_url}
               className="w-full p-2 border rounded"
             />
           </div>
