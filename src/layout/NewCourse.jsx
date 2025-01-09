@@ -1,4 +1,21 @@
+import { useQuery } from "@tanstack/react-query";
+import useAxios from "../hooks/useAxios";
+
 const NewCourse = () => {
+  const axios = useAxios();
+
+  const fetchCourses = async () => {
+    const { data } = await axios.get("/accepted-course");
+    return data;
+  };
+
+  const { data: getCourses, refetch } = useQuery({
+    queryKey: ["getCourses"],
+    queryFn: fetchCourses,
+  });
+
+  console.log(getCourses);
+
   return (
     <>
       <div>
