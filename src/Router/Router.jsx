@@ -15,6 +15,7 @@ import ManageCourse from "../layout/ManageCourse";
 import MyCartPages from "../layout/MyCartPages";
 import MyCourse from "../layout/MyCourse";
 import UpdateCoursePages from "../layout/UpdateCoursePages";
+import WishlistDashboard from "../layout/WishlistDashboard";
 import Profile from "../shared/Profile";
 import PrivateRouter from "./PrivateRouter";
 
@@ -64,6 +65,10 @@ export const router = createBrowserRouter([
       {
         path: "my-course",
         element: <MyCourse />,
+      },
+      {
+        path: "wishlist",
+        element: <WishlistDashboard />,
       },
       // Instructor All Routes
       {
