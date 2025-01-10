@@ -71,9 +71,9 @@ const CourseCard = ({ course }) => {
 
   return (
     <div>
-      <div className="my-6">
-        <img className="w-full px-2" src={image_url} alt={title} />
-        <div className="px-2">
+      <div className="my-6 mx-2">
+        <img className="w-full" src={image_url} alt={title} />
+        <div className="">
           <Link to={`/course/${_id}`}>
             <h2 className="text-md w-56 mt-2 font-bold">{title}</h2>
           </Link>

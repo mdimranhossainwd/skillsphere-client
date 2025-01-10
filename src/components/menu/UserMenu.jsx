@@ -26,7 +26,7 @@ const UserMenu = () => {
 
       <NavLink
         className={({ isActive }) => (isActive ? "text-secondary" : "")}
-        to="my-product"
+        to="wishlist"
       >
         Wishlists
       </NavLink>
