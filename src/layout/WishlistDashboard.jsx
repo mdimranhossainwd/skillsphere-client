@@ -3,7 +3,7 @@ import MyCartPages from "./MyCartPages";
 const WishlistDashboard = () => {
   return (
     <>
-      <div>
+      <div className="px-4">
         <MyCartPages />
       </div>
     </>

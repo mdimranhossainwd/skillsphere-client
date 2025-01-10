@@ -12,7 +12,7 @@ const MyCartPages = () => {
   return (
     <div className="container mx-auto">
       <div className="border-t">
-        <h2 className="text-4xl py-6 font-bold">Shopping Cart</h2>
+        <h2 className="text-3xl py-6 font-bold font-arima">Shopping Cart</h2>
       </div>
 
       {course.length === 0 ? (

@@ -33,6 +33,13 @@ const UserMenu = () => {
 
       <NavLink
         className={({ isActive }) => (isActive ? "text-secondary" : "")}
+        to="payment-history"
+      >
+        Payment History
+      </NavLink>
+
+      <NavLink
+        className={({ isActive }) => (isActive ? "text-secondary" : "")}
         to="review-queue"
       >
         Support
