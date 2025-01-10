@@ -15,6 +15,7 @@ import ManageCourse from "../layout/ManageCourse";
 import MyCartPages from "../layout/MyCartPages";
 import MyCourse from "../layout/MyCourse";
 import UpdateCoursePages from "../layout/UpdateCoursePages";
+import UserPaymentHistory from "../layout/UserPaymentHistory";
 import WishlistDashboard from "../layout/WishlistDashboard";
 import Profile from "../shared/Profile";
 import PrivateRouter from "./PrivateRouter";
@@ -69,6 +70,10 @@ export const router = createBrowserRouter([
       {
         path: "wishlist",
         element: <WishlistDashboard />,
+      },
+      {
+        path: "payment-history",
+        element: <UserPaymentHistory />,
       },
       // Instructor All Routes
       {

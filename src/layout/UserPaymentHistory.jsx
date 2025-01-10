@@ -1,8 +1,10 @@
 const UserPaymentHistory = () => {
   return (
     <>
-      <div>
-        <h1 className="font-3xl font-arima font-bold ">Payment History Info</h1>
+      <div className="my-8">
+        <h1 className="text-3xl text-center font-arima font-bold ">
+          Payment History Info
+        </h1>
       </div>
     </>
   );
