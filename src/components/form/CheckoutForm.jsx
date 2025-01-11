@@ -20,6 +20,14 @@ const CheckoutForm = () => {
     return acc;
   }, {});
 
+  const formatDate = (date) => {
+    const options = { year: "numeric", month: "short", day: "numeric" };
+    return date.toLocaleDateString("en-US", options).replace(",", ",");
+  };
+
+  const date = new Date(); // Specify the date
+  const formattedDate = formatDate(date);
+
   useEffect(() => {
     if (totalCost) {
       getClientSecret(totalCost);
@@ -75,8 +83,10 @@ const CheckoutForm = () => {
         const paymentInfo = {
           email: user?.email,
           name: user?.displayName,
-          status: "verified",
+          status: "completed",
           transId: paymentIntent.id,
+          totalCost,
+          formattedDate,
           courses: course.map((item) => ({
             title: item?.title,
             description: item?.description,
