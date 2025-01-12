@@ -22,7 +22,7 @@ const UserPaymentHistory = () => {
     <>
       <div className="my-8">
         <h1 className="text-3xl text-center font-arima font-bold ">
-          Payment History Info
+          Payment History Infomation
         </h1>
         <div className="px-3 md:px-6 mt-4">
           <table className="table w-full">
