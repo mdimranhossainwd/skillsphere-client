@@ -1,3 +1,4 @@
+import CourseActivityCharts from "../components/chart/CourseActivityCharts";
 import useAuth from "../hooks/useAuth";
 import useAxios from "../hooks/useAxios";
 
@@ -109,6 +110,9 @@ const Profile = () => {
               <span className="font-medium text-sm">Total Certificate</span>
             </div>
           </div>
+        </div>
+        <div>
+          <CourseActivityCharts />
         </div>
       </div>
     </>
