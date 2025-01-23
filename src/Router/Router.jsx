@@ -14,6 +14,7 @@ import MainLayout from "../layout/MainLayout";
 import ManageCourse from "../layout/ManageCourse";
 import MyCartPages from "../layout/MyCartPages";
 import MyCourse from "../layout/MyCourse";
+import SupportPages from "../layout/SupportPages";
 import UpdateCoursePages from "../layout/UpdateCoursePages";
 import UserPaymentHistory from "../layout/UserPaymentHistory";
 import WishlistDashboard from "../layout/WishlistDashboard";
@@ -74,6 +75,10 @@ export const router = createBrowserRouter([
       {
         path: "payment-history",
         element: <UserPaymentHistory />,
+      },
+      {
+        path: "support",
+        element: <SupportPages />,
       },
       // Instructor All Routes
       {

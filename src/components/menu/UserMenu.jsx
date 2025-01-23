@@ -40,7 +40,7 @@ const UserMenu = () => {
 
       <NavLink
         className={({ isActive }) => (isActive ? "text-secondary" : "")}
-        to="review-queue"
+        to="support"
       >
         Support
       </NavLink>
