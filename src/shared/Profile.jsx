@@ -1,4 +1,5 @@
 import CourseActivityCharts from "../components/chart/CourseActivityCharts";
+import HealthActivityChart from "../components/chart/HealthActivityChart";
 import useAuth from "../hooks/useAuth";
 import useAxios from "../hooks/useAxios";
 
@@ -111,8 +112,9 @@ const Profile = () => {
             </div>
           </div>
         </div>
-        <div>
+        <div className="flex items-center justify-between mt-10">
           <CourseActivityCharts />
+          <HealthActivityChart />
         </div>
       </div>
     </>

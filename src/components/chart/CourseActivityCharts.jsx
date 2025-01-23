@@ -26,7 +26,7 @@ const CourseActivityCharts = () => {
 
   return (
     <>
-      <div>
+      <div className="flex-grow-0">
         <Chart
           chartType="LineChart"
           width="100%"
