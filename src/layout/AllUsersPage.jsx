@@ -13,11 +13,6 @@ const AllUsersPage = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [selectedUser, setSelectedUser] = useState(null);
 
-  // const getAllUsers = async () => {
-  //   const { data } = await axios.get("/users");
-  //   return data;
-  // };
-
   const { data: getUserInfo, refetch } = useQuery({
     queryKey: ["getUserInfo", currentPage, itemsPerPage, filter],
     queryFn: async () => {
