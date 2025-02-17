@@ -33,7 +33,7 @@ const AdminMenu = () => {
 
       <NavLink
         className={({ isActive }) => (isActive ? "text-secondary" : "")}
-        to="review-queue"
+        to="support-request"
       >
         Support Requests
       </NavLink>

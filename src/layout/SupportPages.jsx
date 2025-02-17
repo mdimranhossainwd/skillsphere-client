@@ -5,12 +5,15 @@ import useAxios from "../hooks/useAxios";
 
 const SupportPages = () => {
   const axios = useAxios();
+  const date = new Date().toLocaleDateString();
   const { user } = useAuth();
   const [formData, setFormData] = useState({
     name: "",
     email: "",
     issueType: "General Inquiry",
     message: "",
+    status: "Pending",
+    date: date,
   });
 
   const handleChange = (e) => {
