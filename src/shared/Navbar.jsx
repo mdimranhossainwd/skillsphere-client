@@ -29,12 +29,6 @@ const Navbar = () => {
       <NavLink
         className={({ isActive }) => (isActive ? "text-secondary" : "")}
         to="/shop"
-      >
-        My Class
-      </NavLink>
-      <NavLink
-        className={({ isActive }) => (isActive ? "text-secondary" : "")}
-        to="/shop"
       ></NavLink>
 
       <NavLink

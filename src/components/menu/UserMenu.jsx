@@ -44,13 +44,6 @@ const UserMenu = () => {
       >
         Support
       </NavLink>
-
-      <NavLink
-        className={({ isActive }) => (isActive ? "text-secondary" : "")}
-        to="payment"
-      >
-        Account-Setting
-      </NavLink>
     </>
   );
 };
