@@ -14,6 +14,7 @@ import MainLayout from "../layout/MainLayout";
 import ManageCourse from "../layout/ManageCourse";
 import MyCartPages from "../layout/MyCartPages";
 import MyCourse from "../layout/MyCourse";
+import ReportPages from "../layout/ReportPages";
 import SuportAdminPages from "../layout/SuportAdminPages";
 import SupportPages from "../layout/SupportPages";
 import UpdateCoursePages from "../layout/UpdateCoursePages";
@@ -80,6 +81,10 @@ export const router = createBrowserRouter([
       {
         path: "support",
         element: <SupportPages />,
+      },
+      {
+        path: "report",
+        element: <ReportPages />,
       },
       // Instructor All Routes
       {

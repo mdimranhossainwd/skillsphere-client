@@ -40,6 +40,13 @@ const UserMenu = () => {
 
       <NavLink
         className={({ isActive }) => (isActive ? "text-secondary" : "")}
+        to="report"
+      >
+        Report
+      </NavLink>
+
+      <NavLink
+        className={({ isActive }) => (isActive ? "text-secondary" : "")}
         to="support"
       >
         Support
