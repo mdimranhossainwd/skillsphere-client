@@ -1,8 +1,12 @@
 import { useQuery } from "@tanstack/react-query";
+import { useState } from "react";
 import useAxios from "../hooks/useAxios";
+import SupportModal from "../ui/SupportModal";
 
 const SuportAdminPages = () => {
   const axios = useAxios();
+  const [isOpen, setIsOpen] = useState(false);
+  const [currentData, setCurrentData] = useState();
 
   // Get all support requests Data
   const getData = async () => {
@@ -10,10 +14,15 @@ const SuportAdminPages = () => {
     return data;
   };
 
-  const { data: getSupportData } = useQuery({
+  const { data: getSupportData, refetch } = useQuery({
     queryKey: ["supportData"],
     queryFn: getData,
   });
+
+  const handleOpenModal = (item) => {
+    setCurrentData(item);
+    setIsOpen(true);
+  };
 
   console.log(getSupportData);
   return (
@@ -56,7 +65,7 @@ const SuportAdminPages = () => {
                     </td>
                     <td className="py-3 px-4 text-center">{req.date}</td>
                     <td className="py-3 px-4 text-center space-x-2">
-                      <button>
+                      <button onClick={() => handleOpenModal(req)}>
                         <svg
                           xmlns="http://www.w3.org/2000/svg"
                           width="24"
@@ -77,6 +86,12 @@ const SuportAdminPages = () => {
                           <path d="m15 5 4 4" />
                         </svg>
                       </button>
+                      <SupportModal
+                        item={currentData}
+                        refetch={refetch}
+                        isOpen={isOpen}
+                        setIsOpen={setIsOpen}
+                      />
                     </td>
                   </tr>
                 ))}
