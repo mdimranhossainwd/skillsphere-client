@@ -19,13 +19,6 @@ const UserMenu = () => {
 
       <NavLink
         className={({ isActive }) => (isActive ? "text-secondary" : "")}
-        to="my-product"
-      >
-        Certificate
-      </NavLink>
-
-      <NavLink
-        className={({ isActive }) => (isActive ? "text-secondary" : "")}
         to="wishlist"
       >
         Wishlists

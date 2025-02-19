@@ -33,7 +33,7 @@ const InstructorMenu = () => {
 
       <NavLink
         className={({ isActive }) => (isActive ? "text-secondary" : "")}
-        to="payment"
+        to="earnings"
       >
         Earnings
       </NavLink>

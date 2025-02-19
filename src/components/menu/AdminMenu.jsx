@@ -24,12 +24,7 @@ const AdminMenu = () => {
         Approve-Courses
       </NavLink>
 
-      <NavLink
-        className={({ isActive }) => (isActive ? "text-secondary" : "")}
-        to="my-product"
-      >
-        Reports
-      </NavLink>
+     
 
       <NavLink
         className={({ isActive }) => (isActive ? "text-secondary" : "")}
@@ -38,12 +33,7 @@ const AdminMenu = () => {
         Support Requests
       </NavLink>
 
-      <NavLink
-        className={({ isActive }) => (isActive ? "text-secondary" : "")}
-        to="payment"
-      >
-        Account-Setting
-      </NavLink>
+      
     </>
   );
 };

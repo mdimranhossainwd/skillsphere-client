@@ -1,4 +1,5 @@
 import { createBrowserRouter } from "react-router-dom";
+import HealthActivityChart from "../components/chart/HealthActivityChart";
 import AddAssignmentForm from "../components/form/AssainmentForm";
 import CreateCourseForm from "../components/form/CreateCourseForm";
 import SignIn from "../components/form/SignIn";
@@ -103,6 +104,10 @@ export const router = createBrowserRouter([
       {
         path: "update-course/:id",
         element: <UpdateCoursePages />,
+      },
+      {
+        path: "earnings",
+        element: <HealthActivityChart />,
       },
       // Admin All Routes
       {

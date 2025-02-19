@@ -2,25 +2,27 @@ import Chart from "react-google-charts";
 
 const HealthActivityChart = () => {
   const data = [
-    ["Task", "Hours per Day"],
-    ["Work", 9],
-    ["Eat", 2],
-    ["Commute", 2],
-    ["Watch TV", 2],
-    ["Sleep", 7],
+    ["Year", "Sales", "Expenses"],
+    ["2004", 1000, 400],
+    ["2005", 1170, 460],
+    ["2006", 660, 1120],
+    ["2007", 1030, 540],
   ];
 
   const options = {
-    title: "My Daily Activities",
+    title: "Company Performance",
+    curveType: "function",
+    legend: { position: "bottom" },
   };
+
   return (
     <>
       <Chart
-        chartType="PieChart"
+        chartType="LineChart"
+        width="100%"
+        height="400px"
         data={data}
         options={options}
-        width={"100%"}
-        height={"400px"}
       />
     </>
   );
