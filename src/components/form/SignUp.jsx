@@ -32,6 +32,9 @@ const SignUp = () => {
         photo,
         role: "students",
       });
+
+      const { info } = await axios.post("/jwt", result?.user?.email);
+      console.log(info);
       console.log(data);
 
       navigate(from, { replace: true });

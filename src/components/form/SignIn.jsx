@@ -8,17 +8,20 @@ const SignIn = () => {
   const axios = useAxios();
   const navigate = useNavigate();
 
-  const handleLogin = (e) => {
+  const handleLogin = async (e) => {
     e.preventDefault();
     const form = e.target;
     const email = form.email.value;
     const password = form.password.value;
-    signIn(email, password).then((result) => {
-      const user = result.user;
-      toast.success("Welcome back! You have successfully logged in.");
-      navigate("/");
-      console.log(`User's Login`, user);
-    });
+
+    const result = await signIn(email, password);
+    const user = result.user;
+    toast.success("Welcome back! You have successfully logged in.");
+    navigate("/");
+    console.log(`User's Login`, user);
+
+    const { data } = await axios.post("/jwt", result?.user?.email);
+    console.log(data);
   };
 
   const handleToGoogle = async () => {
@@ -31,6 +34,8 @@ const SignIn = () => {
         photo: result?.user?.photoURL,
         role: "students",
       });
+      console.log(data);
+      await axios.post("/jwt", result?.user?.email);
       console.log(data);
       navigate("/");
       toast.success("Google login successful. Enjoy your time with us!");

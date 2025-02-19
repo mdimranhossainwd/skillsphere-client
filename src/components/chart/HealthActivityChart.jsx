@@ -10,7 +10,7 @@ const HealthActivityChart = () => {
   ];
 
   const options = {
-    title: "Company Performance",
+    title: "Earnings Performance",
     curveType: "function",
     legend: { position: "bottom" },
   };
