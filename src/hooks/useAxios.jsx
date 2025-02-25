@@ -1,8 +1,7 @@
 import axios from "axios";
 
 export const instance = axios.create({
-  baseURL:
-    "https://learn-online-skill-server-side.vercel.app/skillsphere/api/v1",
+  baseURL: "https://skillsphere-server-9x2s.onrender.com/skillsphere/api/v1",
   withCredentials: true,
 });
 

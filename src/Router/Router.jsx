@@ -54,7 +54,7 @@ export const router = createBrowserRouter([
         ),
         loader: ({ params }) =>
           fetch(
-            `https://learn-online-skill-server-side.vercel.app/skillsphere/api/v1/courses/${params.id}`
+            `https://skillsphere-server-9x2s.onrender.com/skillsphere/api/v1/courses/${params.id}`
           ),
       },
     ],
