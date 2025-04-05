@@ -17,3 +17,19 @@ The idea behind Skill Sphere is to:
 - Build a portfolio-worthy project to demonstrate full-stack MERN skills.
 
 ---
+
+
+## ✨ Key Features
+
+- 🧑‍🎓 **Student Dashboard**: Browse courses, purchase via Stripe, and track learning.
+- 👨‍🏫 **Instructor Dashboard**: Create, update, and manage courses with preview options.
+- 🛡️ **Admin Panel**: Manage users, monitor platform activity, and remove courses.
+- 📦 **Course Management**:
+  - Title, description, price, image, category
+  - View course details in a dedicated page
+- 💳 **Stripe Payment Gateway**
+- 🔐 **Role-Based Authentication** (Student, Instructor, Admin)
+- 📱 Fully responsive UI for mobile and desktop
+- ⏱️ Real-time loading, caching, and UI feedback using TanStack Query
+
+---
