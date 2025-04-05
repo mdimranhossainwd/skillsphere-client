@@ -33,3 +33,30 @@ The idea behind Skill Sphere is to:
 - ⏱️ Real-time loading, caching, and UI feedback using TanStack Query
 
 ---
+
+
+## 🧰 Technologies Used
+
+### 🔭 Frontend
+
+- React.js
+- React Router DOM
+- Tailwind CSS
+- DaisyUI
+- TanStack React Query
+- Axios
+- Firebase Authentication
+- React Hook Form
+- Stripe Elements
+- React-Google-Charts
+
+### 🛠️ Backend
+
+- Node.js
+- Express.js
+- MongoDB 
+- JWT for secure route protection
+- Stripe API for payments
+- Cors & Dotenv for server configs
+
+---
